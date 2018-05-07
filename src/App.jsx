@@ -5,6 +5,9 @@ import Relase from './components/Relase'
 import Container from './components/Container'
 
 
+// Para la sección de noticias podemos ponerle un paddin top de tal forma que el scroll se tome desde lo alto
+
+
 class App extends Component {
   render() {
     return (

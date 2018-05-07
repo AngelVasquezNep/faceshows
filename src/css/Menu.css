@@ -10,6 +10,7 @@
   align-items: center;
   grid-auto-flow: column;
   color: #fff;
+  justify-content: space-between;
 }
 
 .Menu--buscador {
@@ -25,6 +26,7 @@
 
 .Dashboard {
   display: grid;
+  grid-gap: 12px;
   grid-auto-flow: column;
   align-items: center;
   height: 26px;

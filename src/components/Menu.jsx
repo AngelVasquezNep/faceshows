@@ -2,7 +2,7 @@ import React from 'react';
 import '../css/app.css'
 import '../css/Menu.css'
 import Search from './Search-Container'
-import logo from '../images/facebook.png'
+// import logo from '../images/facebook.png'
 import tv from '../images/tv.png'
 import users from '../images/friends.png'
 import message from '../images/message.png'
@@ -10,12 +10,14 @@ import world from '../images/world.png'
 import help from '../images/help.png'
 import triangle from '../images/triangle.png'
 
+const Logo = "/images/tickets.png"
+
 const Menu = props => (
   <div className="Menu-Container">
     <div className="Container Menu">
       <div className="Menu--buscador">
         <img className="Menu--logo"
-          src={logo} alt="Logo"/>
+          src={Logo} alt="Logo"/>
         <Search/>
       </div>
       <div className="Dashboard">

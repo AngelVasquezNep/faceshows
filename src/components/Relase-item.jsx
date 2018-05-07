@@ -11,7 +11,7 @@ class Item extends Component {
     return (
     <div 
       onClick={this.handleClick}
-      className={"Relase--item" + " " + (this.props.active === this.props.id ? "active" : "" ) } 
+      className={"Relase--item" + " " + (this.props.active === this.props.id && "active" ) } 
       title={this.props.name}
       >
       <img src={this.props.img} alt={this.props.name} />
