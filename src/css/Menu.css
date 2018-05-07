@@ -1,0 +1,64 @@
+.Menu-Container {
+  background-color: #475AB1;
+  height: 42px;
+  display: grid;
+  align-items: center;
+}
+
+.Menu {
+  display: grid;
+  align-items: center;
+  grid-auto-flow: column;
+  color: #fff;
+}
+
+.Menu--buscador {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: flex-start;
+}
+
+.Menu--logo {
+  height: 25px;
+  padding-right: 7px;
+}
+
+.Dashboard {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  height: 26px;
+  align-content: center;
+}
+
+.Usuario, 
+.Inicio,
+.Users,
+.Message,
+.Noticias,
+.Help,
+.Config
+{
+  height: inherit;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  text-decoration: none;
+  color: #ffffff;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.Usuario:hover,
+.Inicio:hover,
+{
+  background-color: rgba(0,0,0,.15);
+  border-radius: 2px;
+}
+
+.Usuario--img {
+  margin-right: 5px;
+}
