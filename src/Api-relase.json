@@ -1,0 +1,94 @@
+{
+  "categories": [
+    {
+      "title": "",
+      "list": [
+        {
+          "img": "/images/food.png",
+          "name": "Maratonicas",
+          "id":"Maratonicas"
+        },
+        {
+          "img": "/images/tickets.png",
+          "name": "Como en el cine",
+          "id":"Como-en-el-cine"
+        },
+        {
+          "img": "/images/hd.png",
+          "name": "Full HD",
+          "id":"Full-HD"
+        }
+      ]
+    },
+    {
+      "title": "Cine Antiguo",
+      "list": [
+        {
+          "img": "/images/chaplin.png",
+          "name": "El gran Chaplin",
+          "id":"El-gran-Chaplin"
+        },
+        {
+          "img": "/images/tv-old.png",
+          "name": "Tv de los 80",
+          "id":"Tv-de-los-80"
+        },
+        {
+          "img": "/images/popcorn.png",
+          "name": "Para-comer",
+          "id":"Para-comer"
+        }
+      ]
+    },
+    {
+      "title": "Explorar novedades",
+      "list": [
+        {
+          "img": "/images/3d.png",
+          "name": "3d",
+          "id":"3d"
+        },
+        {
+          "img": "/images/director.png",
+          "name": "Para disfrutar",
+          "id":"Para-disfrutar"
+        },
+        {
+          "img": "/images/countdown.png",
+          "name": "Obras maestras",
+          "id":"Obras-maestras"
+        },
+        {
+          "img": "/images/people.png",
+          "name": "Con amigos",
+          "id":"Con-amigos"
+        },
+        {
+          "img": "/images/cinta.png",
+          "name": "Clásicos",
+          "id":"Clásicos"
+        },
+        {
+          "img": "/images/cinema.png",
+          "name": "Sé el director",
+          "id":"Sé-el-director"
+        },
+        {
+          "img": "/images/cinemaSite.png",
+          "name": "Como en el cine",
+          "id":"Como-en-el-cine"
+        },
+        {
+          "img": "/images/corte.png",
+          "name": "Corte-Cámara-acción",
+          "id":"Corte-Cámara-acción"
+        },
+        {
+          "img": "/images/comedy.png",
+          "name": "Risas",
+          "id":"Risas"
+        }
+      ]
+    }
+  ]
+}
