@@ -1,0 +1,29 @@
+.User {
+  margin: 5px 0;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 55px 1fr;
+  grid-column-gap: 10px;
+  box-sizing: border-box;
+}
+
+.User-img {
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 50%;
+  border: 3px solid #475AB1;
+}
+
+.User-info {
+  color: #777777;
+  font-size: .8em;
+}
+
+.User:hover .User-nombre {
+  text-decoration: underline;
+}
+
+.User-nombre {
+  font-weight: bold;
+  color: #475AB1;
+}
