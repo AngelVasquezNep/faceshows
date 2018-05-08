@@ -7,6 +7,10 @@
   max-width: 1024px;
 }
 
+.AppContainer {
+  height: 100vh;
+}
+
 .AppContainer,
 .Container--body
 {
@@ -16,7 +20,45 @@
 }
 
 .Container--body {
-  grid-gap: 15px;
-  grid-template-columns: 200px 1fr 320px
+  grid-gap: 20px;
+  grid-template-columns: 200px 1fr 310px
 }
 
+/* Construcción del Scroll */
+
+.Container--body {
+  display: flex;
+}
+
+.Menu-Container {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+
+.Container--body {
+  margin-top: 50px;
+} 
+
+.Relase {
+  position: fixed;
+  width: 200px;
+}
+
+.Historias {
+  width: 310px;
+  left: 850px;
+  position: fixed;
+}
+
+.Noticias-Container {
+  /* margin-left: 200px; */
+  position: relative;
+  width: 480px;
+  left: 220px;
+}
+
+.Noticias {
+  width: 100%;
+  position: absolute;
+}

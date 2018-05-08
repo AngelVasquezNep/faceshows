@@ -6,7 +6,7 @@ import Container from './components/Container'
 import Historias from './components/Historias';
 import Noticias from './components/Noticias';
 
-
+// https://www.tvmaze.com/api
 
 
 class App extends Component {
@@ -17,13 +17,9 @@ class App extends Component {
         <Container>
           <Relase/>
           
-          <div>
             <Noticias/>
-          </div>
           
-          <div>
             <Historias/>
-          </div>
         </Container>
         {/* Menú-Buscador */}
           {/* Relase - Grupos */}

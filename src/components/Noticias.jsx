@@ -13,12 +13,14 @@ createText(texts, lorem);
 
 
 const Noticias = props => (
-  <div className="Noticias">
+  <div className="Noticias-Container">
+    <div className="Noticias">
     {
       texts.map( (tex, index) => {
         return <p key={index} > {tex} </p>
       })
     }
+    </div>
   </div>
 )
 

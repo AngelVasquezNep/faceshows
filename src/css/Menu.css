@@ -26,7 +26,7 @@
 
 .Dashboard {
   display: grid;
-  grid-gap: 12px;
+  grid-gap: 15px;
   grid-auto-flow: column;
   align-items: center;
   height: 26px;
