@@ -4,9 +4,9 @@ import Menu from './components/Menu'
 import Relase from './components/Relase'
 import Container from './components/Container'
 import Historias from './components/Historias';
+import Noticias from './components/Noticias';
 
 
-// Para la sección de noticias podemos ponerle un paddin top de tal forma que el scroll se tome desde lo alto
 
 
 class App extends Component {
@@ -16,7 +16,11 @@ class App extends Component {
         <Menu/>
         <Container>
           <Relase/>
-          <div></div>
+          
+          <div>
+            <Noticias/>
+          </div>
+          
           <div>
             <Historias/>
           </div>

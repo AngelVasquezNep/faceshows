@@ -36,7 +36,7 @@ const Menu = props => (
         <div className="Message" title="Mensajes" >
             <img src={message} alt="Message"/>
         </div>
-        <div className="Noticias" title="Noticias" >
+        <div className="Menu-Noticias" title="Noticias" >
             <img src={world} alt="News"/>
         </div>
         <div className="Help" title="Ayuda Rápida">

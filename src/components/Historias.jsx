@@ -11,7 +11,7 @@ const Historias = props => (
     <div className="Historias--user">
       <img src={user1} alt="user"  className="Historias-img" />
       <div className="Historias-info">
-        <a href="#" className="Historias-nombre"> User 1 </a>
+        <a href="/" className="Historias-nombre"> User 1 </a>
         <p className="Historias-tiempo"> Hace 2 horas </p>
       </div>
     </div>
@@ -19,7 +19,7 @@ const Historias = props => (
     <div className="Historias--user">
       <img src={user2} alt="user" className="Historias-img" />
       <div className="Historias-info">
-        <a href="#" className="Historias-nombre"> User 2 </a>
+        <a href="/" className="Historias-nombre"> User 2 </a>
         <p className="Historias-tiempo"> Hace 20 minutos </p>
       </div>
     </div>
@@ -27,7 +27,7 @@ const Historias = props => (
     <div className="Historias--user">
       <img src={user3} alt="user" className="Historias-img" />
       <div className="Historias-info">
-        <a href="#" className="Historias-nombre"> User 3 </a>
+        <a href="/" className="Historias-nombre"> User 3 </a>
         <p className="Historias-tiempo"> Hace 45 minutos </p>
       </div>
     </div>

@@ -16,6 +16,7 @@
 }
 
 .Container--body {
+  grid-gap: 15px;
   grid-template-columns: 200px 1fr 320px
 }
 
