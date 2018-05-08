@@ -25,6 +25,10 @@
   grid-template-columns: 200px 1fr 310px
 }
 
+.color-face {
+  color: #4F47AF;
+}
+
 /* Construcción del Scroll */
 
 .Container--body {
@@ -47,7 +51,7 @@
 }
 
 .Noticias-Container {
-  /* margin-left: 200px; */
+  margin-top: 13px;
   position: relative;
   width: 480px;
   left: 220px;

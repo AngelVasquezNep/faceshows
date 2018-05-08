@@ -1,7 +1,14 @@
 .NoticiaItem {
   width: 100%;
+  box-shadow: 0 0 1px 1px #dcdcdc;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box; 
+  background-color: #fff;
+  border-radius: 3px;
 }
 
 .NoticiaItem img {
   max-width: 100%;
+  border-radius: 3px;
 }

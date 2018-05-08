@@ -1,12 +1,12 @@
 import React from 'react'
 import NoticiaItem from './Noticia-item.jsx'
-import Api from '../Api-noticias.json'
+// import Api from '../Api-noticias.json'
 
 const Noticias = props => (
   <div className="Noticias-Container">
     <div className="Noticias">
       {
-        Api.map(item => <NoticiaItem {...item} />)
+        props.resultados.map(item => <NoticiaItem {...item} />)
       }
     </div>
   </div>

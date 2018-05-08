@@ -7,15 +7,16 @@ const replaceText = (text) => {
   textModifer = textModifer.replace("</p>", "")
   textModifer = textModifer.replace("<b>", "")
   textModifer = textModifer.replace("</b>", "")
+  textModifer = textModifer.replace("<i>", "")
+  textModifer = textModifer.replace("</i>", "")
   return textModifer
 }
 
 const NoticiaItem = props => (
   <div className="NoticiaItem">
-    <img src={props.image.medium} alt={props.name}/>
-    <p> {props.name} </p>
-    <p> {props.id} </p>
-    <p> { replaceText(props.summary) } </p>
+    <img src={props.image.original} alt={props.name}/>
+    <p className="NoticiasItem-name"> {props.name} </p>
+    <p className="NoticiasItem-summary"> { replaceText(props.summary) } </p>
   </div>
 )
 
