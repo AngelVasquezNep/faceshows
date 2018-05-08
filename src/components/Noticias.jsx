@@ -5,7 +5,9 @@ import Api from '../Api-noticias.json'
 const Noticias = props => (
   <div className="Noticias-Container">
     <div className="Noticias">
-      <NoticiaItem {...Api}/>
+      {
+        Api.map(item => <NoticiaItem {...item} />)
+      }
     </div>
   </div>
 )
