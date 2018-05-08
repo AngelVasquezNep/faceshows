@@ -27,13 +27,26 @@ form .Search-input:focus {
 }
 
 .Search--icon {
+  cursor: pointer;
   background-color: rgb(247, 247, 247);
   height: 100%;
   display: grid;
   align-items: center;
-  margin: 0 auto;
   width: 100%;
   justify-content: center;
+  border: none;
   border-radius: 0 2px 2px 0;
+  transition: all .1s;
+  outline: none;
+}
+.Search--icon img{
+  margin: 0 auto;
+}
+.Search--icon:hover,
+.Search--icon:focus{
+  background-color: rgb(175, 173, 173);
 }
 
+.Search--icon:active {
+  transform: scale(.95);
+}

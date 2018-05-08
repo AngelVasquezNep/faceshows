@@ -9,10 +9,13 @@ class SearchContainer extends Component {
   
   handleSubmit = ev => {
     ev.preventDefault()
+    
+    this.input.value !== "" &&
     console.log(this.input.value)
     this.setState({
       value: ''
     })
+  
   }
 
   setInputRef = element => {

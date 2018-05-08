@@ -18,7 +18,9 @@ const Menu = props => (
       <div className="Menu--buscador">
         <img className="Menu--logo"
           src={Logo} alt="Logo"/>
+        
         <Search/>
+      
       </div>
       <div className="Dashboard">
         <a className="Usuario" href="/">
