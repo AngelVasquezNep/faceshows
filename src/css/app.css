@@ -47,14 +47,14 @@
 
 .Relase {
   position: fixed;
-  width: 200px;
+  width: 185px;
 }
 
 .Noticias-Container {
   margin-top: 13px;
   position: relative;
-  width: 480px;
-  left: 220px;
+  width: 500px;
+  left: 200px;
 }
 
 .Noticias {
@@ -63,7 +63,7 @@
 }
 
 .Historias {
-  width: 280px;
-  margin-left: 725px;
+  width: 285px;
+  margin-left: 710px;
   position: fixed;
 }

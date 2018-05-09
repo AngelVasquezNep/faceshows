@@ -1,5 +1,5 @@
 import React from 'react'
-import './modal.sass'
+import '../css/Modal.css'
 
 function Modal (props) {
   return (
