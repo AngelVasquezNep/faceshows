@@ -20,15 +20,16 @@ class App extends PureComponent {
   }
 
   componentDidMount () {
-    fetch('http://api.tvmaze.com/shows?page=1')
+    fetch('http://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=mexico&api_key=dbb07da9fa46417bcc64f2fb72830a6b&format=json')
     .then(res => res.json())
     .then(json => {
       this.setState({
-        resultados: json,
+        resultados: json.topartists.artist,
         errorResultados: false
       })
     })
     .catch(error => {
+      console.log("LO SENTIMOS, TUVIMOS UN ERROR: " + error)
       this.setState({
         errorResultados: true
       })
