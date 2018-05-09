@@ -9,7 +9,7 @@ const Noticias = props => (
         props.errorResultados && (<h2>Lo sentimos, hubo un error con los datos, estamos trabajando para solucionarlo.</h2>) 
       }
       {
-        props.resultados.map(item => <NoticiaItem {...item} key={item.mbid}/>)
+        props.resultados.map(item => <NoticiaItem {...item} key={item.id}/>)
       }
     </div>
   </div>

@@ -35,7 +35,7 @@ class SearchContainer extends Component {
         handleSubmit = { this.handleSubmit }
         handleChange = {this.handleInputChange}
         value = { this.state.value }
-        placeHolder = "Busca tu programa favorito"
+        placeHolder = "Busca tu artista favorito"
       />
     )
   }

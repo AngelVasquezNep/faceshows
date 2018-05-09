@@ -15,10 +15,9 @@ const replaceText = (text) => {
 
 const NoticiaItem = props => (
   <div className="NoticiaItem">
-    <User image={props.image[1]['#text']} name={props.name} />
-    <img className="NoticiaItem-img" src={props.image[4]['#text']} alt={props.name}/>
-    <p className="NoticiasItem-name"> {props.name} </p>
-    {/* <p className="NoticiasItem-summary"> { replaceText(props.summary) } </p> */}
+    <User image={ props.album.images[0].url } name={props.artists[0].name} />
+    <img className="NoticiaItem-img" src={ props.album.images[0].url } alt={props.album.name}/>
+    <p className="NoticiasItem-name"> {props.album.name} </p>
   </div>
 )
 

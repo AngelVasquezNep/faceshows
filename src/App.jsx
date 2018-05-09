@@ -20,11 +20,12 @@ class App extends PureComponent {
   }
 
   componentDidMount () {
-    fetch('http://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=mexico&api_key=dbb07da9fa46417bcc64f2fb72830a6b&format=json')
-    .then(res => res.json())
+    fetch('https://platzi-music-api.now.sh/search?type=track&query=Luis')
+    .then(res => res.json() )
     .then(json => {
+      console.log(json)
       this.setState({
-        resultados: json.topartists.artist,
+        resultados: json.tracks.items,
         errorResultados: false
       })
     })
