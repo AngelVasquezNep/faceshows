@@ -15,7 +15,8 @@ import Api from './Api-noticias.json'
 class App extends PureComponent {
 
   state = {
-    resultados: []
+    resultados: [],
+    errorResultados: false
   }
 
   componentDidMount () {
@@ -23,7 +24,13 @@ class App extends PureComponent {
     .then(res => res.json())
     .then(json => {
       this.setState({
-        resultados: json
+        resultados: json,
+        errorResultados: false
+      })
+    })
+    .catch(error => {
+      this.setState({
+        errorResultados: true
       })
     })
   }
@@ -35,7 +42,9 @@ class App extends PureComponent {
         <Container>
           <Relase/>
           
-            <Noticias resultados = { this.state.resultados }/>
+            <Noticias resultados = { this.state.resultados } 
+                      errorResultados = {this.state.errorResultados}
+                      />
           
             <Historias />
         </Container>
