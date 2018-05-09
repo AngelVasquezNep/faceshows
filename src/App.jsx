@@ -8,6 +8,9 @@ import Noticias from './components/Noticias';
 import Api from './Api-noticias.json'
 // https://www.tvmaze.com/api
 
+// https://www.behance.net/dev/apps/42679?success=1
+// https://www.behance.net/dev/
+// API KEY / CLIENT ID ppkVaq40VH8OlOVeifEokl6VmZfBSY8h
 
 class App extends PureComponent {
 
