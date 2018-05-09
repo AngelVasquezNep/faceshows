@@ -1,10 +1,10 @@
 import React from 'react'
 import '../css/Relase.css'
-import ListItem from './Relase-category'
+import RelaseCategory from './Relase-category'
 
 const Relase = props => (
   <div className="Relase">
-    <ListItem/>
+    <RelaseCategory/>
   </div>
 )
 

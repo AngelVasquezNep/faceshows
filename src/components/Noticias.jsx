@@ -6,7 +6,7 @@ const Noticias = props => (
   <div className="Noticias-Container">
     <div className="Noticias">
       {
-        props.resultados.map(item => <NoticiaItem {...item} />)
+        props.resultados.map(item => <NoticiaItem {...item} key={item.id}/>)
       }
     </div>
   </div>

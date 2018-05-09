@@ -12,11 +12,16 @@
   width: 100%;
   border-radius: 50%;
   border: 3px solid #475AB1;
+  height: 55px;
 }
 
 .User-info {
   color: #777777;
   font-size: .8em;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  text-align: left;
 }
 
 .User:hover .User-nombre {
@@ -26,4 +31,8 @@
 .User-nombre {
   font-weight: bold;
   color: #475AB1;
+}
+
+.User-tiempo {
+  margin: 3px;
 }

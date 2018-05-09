@@ -34,7 +34,7 @@ class App extends PureComponent {
           
             <Noticias resultados = { this.state.resultados }/>
           
-            <Historias/>
+            <Historias />
         </Container>
         {/* Menú-Buscador */}
           {/* Relase - Grupos */}
