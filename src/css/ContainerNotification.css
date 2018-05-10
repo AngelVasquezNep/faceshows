@@ -1,0 +1,18 @@
+.ContainerNotification {
+  max-width: 430px;
+  max-height: 90vh;
+  overflow-y: scroll;
+  color: #000;
+  box-shadow: 0 0 1px 1px #dcdcdc;
+  position: absolute;
+  padding: 10px;
+  box-sizing: border-box;
+  top: 35px;
+  right: 60px;
+  background-color: #fff;
+}
+
+.NotificationMessage-type {
+  margin: 0;
+  text-align: left;
+}

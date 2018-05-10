@@ -9,6 +9,8 @@ import message from '../images/message.png'
 import world from '../images/world.png'
 import help from '../images/help.png'
 import triangle from '../images/triangle.png'
+import ContainerNotification from './ContainerNotification'
+import NotificationMessage from './NotificationMessage'
 
 const Logo = "/images/tickets.png"
 
@@ -24,7 +26,7 @@ const Menu = props => (
         />
       
       </div>
-      <div className="Dashboard">
+      <nav className="Dashboard">
         <a className="Usuario" href="/">
           <img src={tv} alt="TV" className="Usuario--img"/>
           <span className="Usuario-name">Angel</span>
@@ -47,7 +49,15 @@ const Menu = props => (
         <div className="Config" title="Configuración">
             <img src={triangle} alt="Configuración"/>
         </div>
-      </div>
+      </nav>
+
+      <ContainerNotification>
+        <NotificationMessage
+          typeNotification = "Noticias"
+        />
+      </ContainerNotification>
+
+
     </div>
   </div>
 )

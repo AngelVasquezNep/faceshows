@@ -14,6 +14,7 @@
   justify-content: center;
   vertical-align: middle;
   height: 100vh;
+  transition: all .3s;
   animation: apper .3s forwards;
   opacity: .3;
   transform: scale(1.5);
