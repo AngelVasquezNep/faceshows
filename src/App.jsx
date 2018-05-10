@@ -36,7 +36,8 @@ class App extends PureComponent {
       })
     })
   } 
-
+  
+  
   state = {
     resultados: [],
     fetchLoadingNoticias: true,
@@ -47,20 +48,31 @@ class App extends PureComponent {
   
   componentDidMount () {
     this.searchApi("Luis")
+    
+    window.addEventListener("keyup", (ev)=> {
+      const keyScape = 27
+      ev.keyCode === keyScape && this.closeModal()
+    })
+ 
   }
-
+  
   handleSearch = ( value )  => {
     this.searchApi(value)
   }
-
+  
   handleClikItemFullScreen = item => {
+
+    
+    
     this.setState({
       itemFullScreen: item,
       isItemFullScreen: true
     })
+    
   }
   
   closeModal = () => {
+
     this.setState({
       isItemFullScreen: false
     })
