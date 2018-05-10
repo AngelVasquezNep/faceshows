@@ -1,0 +1,37 @@
+.ItemFullScreen {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+  height: 100vh;
+  position: relative;
+}
+.ItemFullScreen-background{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position:  0 50%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  filter: blur(15px) brightness(50%);
+}
+.ItemFullScreen-content{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  z-index: 1;
+  width: 100%;
+  grid-template-columns: 70% 1fr;
+  color: #fff;
+}
+.ItemFullScreen-img {
+  height: 90%;
+  max-width: 100%;
+  margin: auto;
+  filter: grayscale(0%);
+}
