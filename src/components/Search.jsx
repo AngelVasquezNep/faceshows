@@ -12,6 +12,7 @@ const Search = (props) => (
             placeholder={props.placeHolder}
             value = { props.value }
             onChange={props.handleChange}
+            autoComplete="off"
             required
             />
     </form>

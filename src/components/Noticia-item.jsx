@@ -1,22 +1,34 @@
-import React from 'react'
+import React, {Component} from 'react'
 import '../css/NoticiaItem.css'
 import User from './User'
 
-const NoticiaItem = props => (
-  <div className="NoticiaItem">
-    
-    <User image={ props.album.images[1].url ? props.album.images[1].url : props.album.images[0].url } 
-          name={props.artists[0].name} 
+class NoticiaItem extends Component {
+
+  handleItemClik = () => {
+    this.props.handleClikItemFullScreen(this.props)
+  }
+  
+  render () {
+    return(
+      <div className="NoticiaItem">
+  
+        <User 
+            image={ this.props.album.images[0].url } 
+            name={this.props.artists[0].name} 
           />
+      
+        <img className="NoticiaItem-img" 
+          src={ this.props.album.images[0].url } 
+          alt={this.props.album.name}
+          onClick = { this.handleItemClik }
+        />
+        
+        <p className="NoticiasItem-name"> {this.props.album.name} </p>
+        
+      </div>
+    )
+  }
+}
 
-    <img className="NoticiaItem-img" 
-         src={ props.album.images[0].url } 
-         alt={props.album.name}
-         />
-
-    <p className="NoticiasItem-name"> {props.album.name} </p>
-
-  </div>
-)
 
 export default NoticiaItem

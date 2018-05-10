@@ -5,6 +5,10 @@ import Relase from './components/Relase'
 import Container from './components/Container'
 import Historias from './components/Historias';
 import Noticias from './components/Noticias';
+import ModalContainer from './components/modalContainer';
+import Modal from './components/Modal';
+import ItemFullScreen from './components/ItemFullScreen';
+
 //simport Api from './Api-noticias.json'
 // https://www.tvmaze.com/api
 
@@ -13,13 +17,7 @@ import Noticias from './components/Noticias';
 // API KEY / CLIENT ID ppkVaq40VH8OlOVeifEokl6VmZfBSY8h
 
 class App extends PureComponent {
-
-  state = {
-    resultados: [],
-    fetchLoadingNoticias: true,
-    errorResultados: false
-  }
-
+  
   searchApi = (value) => {
     fetch(`https://platzi-music-api.now.sh/search?type=track&query=${value}`)
     .then(res => res.json() )
@@ -39,13 +37,33 @@ class App extends PureComponent {
     })
   } 
 
+  state = {
+    resultados: [],
+    fetchLoadingNoticias: true,
+    errorResultados: false,
+    isItemFullScreen: false,
+    itemFullScreen: {}
+  }
+  
   componentDidMount () {
     this.searchApi("Luis")
   }
 
   handleSearch = ( value )  => {
     this.searchApi(value)
-    console.log( "Desde App: " + value)
+  }
+
+  handleClikItemFullScreen = item => {
+    this.setState({
+      itemFullScreen: item,
+      isItemFullScreen: true
+    })
+  }
+  
+  closeModal = () => {
+    this.setState({
+      isItemFullScreen: false
+    })
   }
 
   render() {
@@ -62,10 +80,25 @@ class App extends PureComponent {
             <Noticias resultados = { this.state.resultados } 
                       fetchLoadingNoticias = { this.state.fetchLoadingNoticias }
                       errorResultados = {this.state.errorResultados}
+                      handleClikItemFullScreen = {this.handleClikItemFullScreen}
                       />
           
             <Historias />
         </Container>
+        
+        {
+          this.state.isItemFullScreen &&
+          <ModalContainer>
+            <Modal
+              handleClick = { this.closeModal }
+            >
+              <ItemFullScreen
+                item = { this.state.itemFullScreen }
+                />
+            </Modal>
+          </ModalContainer>
+        }
+        
         {/* Menú-Buscador */}
           {/* Relase - Grupos */}
           {/* Noticias */}

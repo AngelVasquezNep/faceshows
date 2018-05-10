@@ -9,7 +9,8 @@ function Modal (props) {
         props.botonVisible && (
           <button className="Modal-close" onClick={props.handleClick} >&times;</button>
         )
-      }
+      } 
+      <button className="Modal-close" onClick={props.handleClick} >&times;</button>
     </div>
   )
 }
