@@ -1,5 +1,6 @@
 import React from 'react'
 import NoticiaItem from './Noticia-item.jsx'
+import Spinner from './Sppiner';
 // import Api from '../Api-noticias.json'
 
 const Noticias = props => (
@@ -10,6 +11,9 @@ const Noticias = props => (
       }
       {
         props.resultados.map(item => <NoticiaItem {...item} key={item.id}/>)
+      }
+      {
+        props.fetchLoadingNoticias && <Spinner/>
       }
     </div>
   </div>

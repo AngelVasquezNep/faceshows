@@ -16,6 +16,7 @@ class App extends PureComponent {
 
   state = {
     resultados: [],
+    fetchLoadingNoticias: true,
     errorResultados: false
   }
 
@@ -23,15 +24,16 @@ class App extends PureComponent {
     fetch('https://platzi-music-api.now.sh/search?type=track&query=Luis')
     .then(res => res.json() )
     .then(json => {
-      console.log(json)
       this.setState({
         resultados: json.tracks.items,
+        fetchLoadingNoticias: false,
         errorResultados: false
       })
     })
     .catch(error => {
       console.log("LO SENTIMOS, TUVIMOS UN ERROR: " + error)
       this.setState({
+        fetchLoadingNoticias: false,
         errorResultados: true
       })
     })
@@ -45,6 +47,7 @@ class App extends PureComponent {
           <Relase/>
           
             <Noticias resultados = { this.state.resultados } 
+                      fetchLoadingNoticias = { this.state.fetchLoadingNoticias }
                       errorResultados = {this.state.errorResultados}
                       />
           

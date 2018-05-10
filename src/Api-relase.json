@@ -35,7 +35,7 @@
         },
         {
           "img": "/images/popcorn.png",
-          "name": "Para-comer",
+          "name": "Para comer",
           "id":"Para-comer"
         }
       ]
@@ -75,8 +75,8 @@
         },
         {
           "img": "/images/cinemaSite.png",
-          "name": "Como en el cine",
-          "id":"Como-en-el-cine"
+          "name": "Al cine",
+          "id":"Al-cine"
         },
         {
           "img": "/images/corte.png",
