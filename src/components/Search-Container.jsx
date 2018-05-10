@@ -10,8 +10,9 @@ class SearchContainer extends Component {
   handleSubmit = ev => {
     ev.preventDefault()
     
+    this.props.handleSearch(this.state.value)
+
     this.input.value !== "" &&
-    console.log(this.input.value)
     this.setState({
       value: ''
     })
@@ -24,7 +25,7 @@ class SearchContainer extends Component {
 
   handleInputChange = event => {
     this.setState({
-      value: event.target.value.replace(' ', '-')
+      value: event.target.value
     })
   }
 

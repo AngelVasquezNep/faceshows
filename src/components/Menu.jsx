@@ -19,7 +19,9 @@ const Menu = props => (
         <img className="Menu--logo"
           src={Logo} alt="Logo"/>
         
-        <Search/>
+        <Search
+          handleSearch = {props.handleSearch}
+        />
       
       </div>
       <div className="Dashboard">

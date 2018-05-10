@@ -5,7 +5,7 @@ import Relase from './components/Relase'
 import Container from './components/Container'
 import Historias from './components/Historias';
 import Noticias from './components/Noticias';
-import Api from './Api-noticias.json'
+//simport Api from './Api-noticias.json'
 // https://www.tvmaze.com/api
 
 // https://www.behance.net/dev/apps/42679?success=1
@@ -20,8 +20,8 @@ class App extends PureComponent {
     errorResultados: false
   }
 
-  componentDidMount () {
-    fetch('https://platzi-music-api.now.sh/search?type=track&query=Luis')
+  searchApi = (value) => {
+    fetch(`https://platzi-music-api.now.sh/search?type=track&query=${value}`)
     .then(res => res.json() )
     .then(json => {
       this.setState({
@@ -37,12 +37,25 @@ class App extends PureComponent {
         errorResultados: true
       })
     })
+  } 
+
+  componentDidMount () {
+    this.searchApi("Luis")
+  }
+
+  handleSearch = ( value )  => {
+    this.searchApi(value)
+    console.log( "Desde App: " + value)
   }
 
   render() {
     return (
       <AppContainer>
-        <Menu/>
+        
+        <Menu
+            handleSearch = { this.handleSearch }
+        />
+        
         <Container>
           <Relase/>
           

@@ -5,12 +5,16 @@
   grid-template-columns: auto 50px;
   align-items: center;
 }
-form {
+.Search form {
   display: grid;
   height: 100%;
 }
 
-form .Search-input {
+.Search form:visited {
+  background-color: red;
+}
+
+.Search form .Search-input {
   font-size: 14px;
   padding-left: 5px;
   align-items: center;
@@ -22,7 +26,7 @@ form .Search-input {
   transition: .2s;
   box-shadow: 2px 2px 5px rgba(0,0,0,.2);
 }
-form .Search-input:focus {
+.Search form .Search-input:focus {
   box-shadow: 0 0 10px rgba(0,0,0,.5);
 }
 

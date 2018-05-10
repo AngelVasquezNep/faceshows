@@ -10,7 +10,14 @@ const Noticias = props => (
         props.errorResultados && (<h2>Lo sentimos, hubo un error con los datos, estamos trabajando para solucionarlo.</h2>) 
       }
       {
-        props.resultados.map(item => <NoticiaItem {...item} key={item.id}/>)
+        console.log(props.resultados)
+      }
+      {
+        !props.resultados.length ? (
+             <p>No hallamos la canción o artista que buscas</p>
+             ) : (
+              props.resultados.map(item => <NoticiaItem {...item} key={item.id}/>)
+            )
       }
       {
         props.fetchLoadingNoticias && <Spinner/>
