@@ -47,7 +47,14 @@ class App extends PureComponent {
   }
   
   componentDidMount () {
-    this.searchApi("Luis")
+
+    const listArtists = [ 'Luis', 'Rihanna', 'Adele', 'Avicii', 'Enrique Iglesias', 'Despacito', 'Beyoncé', 'Miguel Bosé' ]
+
+    const artistRandom = (artists) =>  {
+      return artists[Math.floor(artists.length * Math.random())]
+    }
+
+    this.searchApi(artistRandom(listArtists))
     
     window.addEventListener("keyup", (ev)=> {
       const keyScape = 27
