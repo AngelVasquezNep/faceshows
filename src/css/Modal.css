@@ -14,6 +14,17 @@
   justify-content: center;
   vertical-align: middle;
   height: 100vh;
+  animation: apper .3s forwards;
+  opacity: .3;
+  transform: scale(1.5);
+  will-change: opacity, transform;
+}
+
+@keyframes apper {
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .Modal-close {
@@ -24,14 +35,14 @@
   top: 10px;
   border-radius: 50%;
   border: none;
-  background-color: #171c30;
+  background-color: rgba(74, 70, 131, 0.5);
   color: #fff;
   cursor: pointer;
   z-index: 2;
-}
-
-.Modal-close:after {
+  transition: all .3s;
   font-weight: bold;
-  font-size: 30px;
 }
 
+.Modal-close:hover {
+  background-color: rgb(29, 22, 128);
+}
