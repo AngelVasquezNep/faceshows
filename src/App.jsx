@@ -56,21 +56,21 @@ class App extends PureComponent {
 
     this.searchApi(artistRandom(listArtists))
     
-    window.addEventListener("keyup", (ev)=> {
-      const keyScape = 27
-      ev.keyCode === keyScape && this.closeModal()
-    })
- 
+    window.addEventListener("keyup", this.togleScapeEvent )
+    
   }
   
+  togleScapeEvent = ev => {
+    const keyScape = 27
+    ev.keyCode === keyScape && this.closeModal()
+  }
+
   handleSearch = ( value )  => {
     this.searchApi(value)
   }
   
   handleClikItemFullScreen = item => {
 
-    
-    
     this.setState({
       itemFullScreen: item,
       isItemFullScreen: true
@@ -80,9 +80,11 @@ class App extends PureComponent {
   
   closeModal = () => {
 
+    window.removeEventListener('keyup', this.togleScapeEvent)
     this.setState({
       isItemFullScreen: false
     })
+  
   }
 
   render() {
