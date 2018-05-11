@@ -1,36 +1,14 @@
 .ContainerNotification {
   max-width: 430px;
   color: #393939;
-  box-shadow: 0 0 1px 1px #dcdcdc;
+  box-shadow: 0 2px 1px 1px #dcdcdc;
   position: absolute;
-  padding: 10px;
+  /* padding: 10px; */
   box-sizing: border-box;
   top: 35px;
   right: 60px;
   background-color: #FFF;
   max-height: 90vh;
   width: 100%;
-  overflow-y: scroll;
-}
-
-.NotificationMessage-body {
-  position: relative;
-}
-
-.NotificationMessage-cuadrado {
-  z-index: 1000;
-  width: 30px;
-  height: 30px;
-  background-color: #F1F1F1;
-  position: absolute;
-  top: -15px;
-  transform: rotate(45deg);
-  display: none;
-}
-
-.NotificationMessage-type {
-  margin: 0;
-  padding-bottom: 10px;
-  text-align: left;
-  border-bottom: 1px solid #393939;
+  overflow-y: hidden;
 }

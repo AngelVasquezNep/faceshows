@@ -21,8 +21,8 @@ class Menu extends Component {
     messages: [],
     noticias: [],
     typeNotification: '',
-    isShowNotification: false
-    
+    isShowNotification: false,
+    triangleRight: 0
   }
 
   handleClickMenu = ev => {
@@ -34,8 +34,12 @@ class Menu extends Component {
     
     if (this.menuItem === ev.target.id && this.state.isShowNotification) {
       this.setState({isShowNotification: false})
-      console.log("Cerrar")
     }
+
+    if (ev.target.id === 'Artistas') this.setState({ triangleRight: 155 })
+    if (ev.target.id === 'Messages') this.setState({ triangleRight: 115 })
+    if (ev.target.id === 'Noticias') this.setState({ triangleRight: 75 })
+
     this.menuItem = ev.target.id
     
   }
@@ -86,7 +90,7 @@ class Menu extends Component {
                   title="Noticias"
                   onClick = { this.handleClickMenu } 
                   >
-              <img src={world} alt="News" id="Noticias"/>
+                  <img src={world} alt="News" id="Noticias"/>
             </div>
 
             <div className="Help" title="Ayuda Rápida">
@@ -97,7 +101,13 @@ class Menu extends Component {
               <img src={triangle} alt="Configuración"/>
             </div>
 
-          
+            {
+              this.state.isShowNotification && 
+              <div className="NotificationMessage-cuadrado"
+                    style={{ right: this.state.triangleRight }}
+              ></div>
+            }
+
           </nav>
           {
             this.state.isShowNotification && 

@@ -32,6 +32,7 @@
   align-items: center;
   height: 26px;
   align-content: center;
+  position: relative;
 }
 
 .Usuario, 
@@ -65,4 +66,16 @@
 
 .Usuario--img {
   margin-right: 5px;
+}
+
+.NotificationMessage-cuadrado {
+  z-index: -1;
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  position: absolute;
+  bottom: -18px;
+  right: 75px;
+  transform: rotate(45deg);
+  /* display: none; */
 }
