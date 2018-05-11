@@ -8,6 +8,7 @@ import Noticias from './components/Noticias';
 import ModalContainer from './components/modalContainer';
 import Modal from './components/Modal';
 import ItemFullScreen from './components/ItemFullScreen';
+import searchApi from './services/searchApi.js'
 
 //simport Api from './Api-noticias.json'
 // https://www.tvmaze.com/api
@@ -18,9 +19,8 @@ import ItemFullScreen from './components/ItemFullScreen';
 
 class App extends PureComponent {
   
-  searchApi = (value) => {
-    fetch(`https://platzi-music-api.now.sh/search?type=track&query=${value}`)
-    .then(res => res.json() )
+  search = (value) => {
+    searchApi(value)
     .then(json => {
       this.setState({
         resultados: json.tracks.items,
@@ -35,9 +35,8 @@ class App extends PureComponent {
         errorResultados: true
       })
     })
-  } 
-  
-  
+  }
+
   state = {
     resultados: [],
     fetchLoadingNoticias: true,
@@ -54,10 +53,10 @@ class App extends PureComponent {
       return artists[Math.floor(artists.length * Math.random())]
     }
 
-    this.searchApi(artistRandom(listArtists))
-    
+    this.search(artistRandom(listArtists))
+
     window.addEventListener("keyup", this.togleScapeEvent )
-    
+
   }
   
   togleScapeEvent = ev => {
@@ -66,7 +65,7 @@ class App extends PureComponent {
   }
 
   handleSearch = ( value )  => {
-    this.searchApi(value)
+    this.search(value)
   }
   
   handleClikItemFullScreen = item => {
