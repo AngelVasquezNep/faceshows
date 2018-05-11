@@ -1,5 +1,5 @@
 import React from 'react'
-// import Users from './User'
+import User from './User'
 import '../css/NotificacionesMessage.css'
 
 const NotificationMessage = props => (
@@ -10,18 +10,17 @@ const NotificationMessage = props => (
     
     <div className="NotificationMessage-body">
       <ul>
-        <li><p className="NotificationMessage-body-item">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio perspiciatis repudiandae dignissimos ex aut nisi ab, error blanditiis? Velit iure quidem suscipit cupiditate iste in, explicabo exercitationem sit labore possimus!
-        </p></li>
-        <li><p className="NotificationMessage-body-item">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio perspiciatis repudiandae dignissimos ex aut nisi ab, error blanditiis? Velit iure quidem suscipit cupiditate iste in, explicabo exercitationem sit labore possimus!
-        </p></li>
-        <li><p className="NotificationMessage-body-item">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio perspiciatis repudiandae dignissimos ex aut nisi ab, error blanditiis? Velit iure quidem suscipit cupiditate iste in, explicabo exercitationem sit labore possimus!
-        </p></li>
+        {
+          props.notificaciones.map(item =>{
+          return  <li key={item.id} className="NotificationMessage-body-item">
+                    <User 
+                      image={ item.album.images[0].url } 
+                      name={item.artists[0].name}
+                    />
+                  </li>
+          })
+        }
       </ul>
-
-      
 
     </div>
   </div>

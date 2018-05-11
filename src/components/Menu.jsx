@@ -11,12 +11,12 @@ import help from '../images/help.png'
 import triangle from '../images/triangle.png'
 import ContainerNotification from './ContainerNotification'
 import NotificationMessage from './NotificationMessage'
+import {searchApi, listArtists, artistRandom} from '../services/searchApi'
 
 const Logo = "/images/tickets.png"
 
-
 class Menu extends Component {
-  
+
   itemMenuDashboard = [
     {
       className: "Users",
@@ -42,6 +42,7 @@ class Menu extends Component {
   ]
 
   state = {
+    notificaciones: [],
     Artistas: [],
     messages: [],
     noticias: [],
@@ -50,8 +51,30 @@ class Menu extends Component {
     triangleRight: 0
   }
 
+  search = (value) => {
+    searchApi(value)
+    .then(json => {
+      this.setState({
+        notificaciones: json.tracks.items,
+        // fetchLoadingNoticias: false,
+        // errorResultados: false
+      })
+    })
+    .catch(error => {
+      console.log("LO SENTIMOS, TUVIMOS UN ERROR: " + error)
+      this.setState({
+        // fetchLoadingNoticias: false,
+        // errorResultados: true
+      })
+    })
+  }
+
+  artist = artistRandom(listArtists) 
+
   handleClickMenu = ev => {
-    
+
+    this.search(this.artist)
+
     this.setState({
       typeNotification: ev.target.id,
       isShowNotification: true
@@ -130,11 +153,12 @@ class Menu extends Component {
           {
             this.state.isShowNotification && 
             <ContainerNotification>
-              
+
               <NotificationMessage
+                notificaciones = {this.state.notificaciones}
                 typeNotification = {this.state.typeNotification}
               />
-            
+
             </ContainerNotification>
           }
 

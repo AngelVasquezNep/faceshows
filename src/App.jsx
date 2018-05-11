@@ -8,7 +8,7 @@ import Noticias from './components/Noticias';
 import ModalContainer from './components/modalContainer';
 import Modal from './components/Modal';
 import ItemFullScreen from './components/ItemFullScreen';
-import searchApi from './services/searchApi.js'
+import {searchApi, listArtists, artistRandom} from './services/searchApi.js'
 
 //simport Api from './Api-noticias.json'
 // https://www.tvmaze.com/api
@@ -46,12 +46,6 @@ class App extends PureComponent {
   }
   
   componentDidMount () {
-
-    const listArtists = [ 'Luis', 'Rihanna', 'Adele', 'Avicii', 'Enrique Iglesias', 'Despacito', 'Beyoncé', 'Miguel Bosé' ]
-
-    const artistRandom = (artists) =>  {
-      return artists[Math.floor(artists.length * Math.random())]
-    }
 
     this.search(artistRandom(listArtists))
 
