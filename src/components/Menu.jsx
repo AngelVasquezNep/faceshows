@@ -27,8 +27,6 @@ class Menu extends Component {
 
   handleClickMenu = ev => {
     
-    console.log(this.menuItem === ev.target.id)
-    
     this.setState({
       typeNotification: ev.target.id,
       isShowNotification: true
