@@ -49,8 +49,7 @@ class App extends PureComponent {
 
     this.search(artistRandom(listArtists))
 
-    window.addEventListener("keyup", this.togleScapeEvent )
-
+    
   }
   
   togleScapeEvent = ev => {
@@ -63,7 +62,9 @@ class App extends PureComponent {
   }
   
   handleClikItemFullScreen = item => {
-
+    
+    window.addEventListener("keyup", this.togleScapeEvent )
+    
     this.setState({
       itemFullScreen: item,
       isItemFullScreen: true
