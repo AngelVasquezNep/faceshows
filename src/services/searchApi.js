@@ -7,6 +7,10 @@ export const searchApi= (value) => {
   })
 }
 
-export const listArtists = [ 'Luis', 'Rihanna', 'Adele', 'Avicii', 'Enrique Iglesias', 'Despacito', 'Beyoncé', 'Miguel Bosé' ]
+export const listArtists = [ 'Luis', 'Rihanna', 'Adele', 'Avicii', 'Enrique Iglesias', 'Despacito', 'Beyoncé', 'Miguel Bosé', 'Despacito', 'Shakira', 'Café Tacuba', 'Romeo Santos', 'Ricky Martin' ]
 
 export const artistRandom = (artists) =>  artists[Math.floor(artists.length * Math.random())]
+
+export const apiArtistas = artistRandom(listArtists)
+export const apiMessages = artistRandom(listArtists)
+export const apiNoticias = artistRandom(listArtists)
