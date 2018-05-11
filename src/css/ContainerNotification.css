@@ -10,4 +10,16 @@
   background-color: #FFF;
   width: 100%;
   overflow-y: hidden;
+  transition: all .3s;
+  will-change: opacity, transform;
+  animation: apper .7s forwards;  
+  opacity: .4;
+  transform: translateX(15px);
+}
+
+@keyframes apper {
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
