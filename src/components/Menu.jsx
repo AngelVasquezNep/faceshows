@@ -47,6 +47,7 @@ class Menu extends Component {
     Messages: [],
     Noticias: [],
     typeNotification: '',
+    loading: false,
     isShowNotification: false,
     triangleRight: 0
   }
@@ -58,15 +59,18 @@ class Menu extends Component {
     .then(json => {
       if(type === 'Artistas') this.setState({ 
         Artistas: json.tracks.items,
-        notificaciones: json.tracks.items
+        notificaciones: json.tracks.items,
+        loading: false
       })
       else if(type === 'Messages') this.setState({ 
         Messages: json.tracks.items,
-        notificaciones: json.tracks.items
+        notificaciones: json.tracks.items,
+        loading: false
       })
       else if(type === 'Noticias') this.setState({ 
         Noticias: json.tracks.items,
-        notificaciones: json.tracks.items
+        notificaciones: json.tracks.items,
+        loading: false
       })
     })
     .catch(error => {
@@ -92,17 +96,26 @@ class Menu extends Component {
     }
 
     if (ev.target.id === 'Artistas') {
-      if(!this.state.Artistas.length) this.search(apiArtistas, ev.target.id)
+      if(!this.state.Artistas.length) {
+        this.search(apiArtistas, ev.target.id)
+        this.setState({ loading:true })
+      }
       this.setState({ triangleRight: 155 })
     }
     
     else if (ev.target.id === 'Messages') {
-      if(!this.state.Messages.length) this.search(apiMessages, ev.target.id)
+      if(!this.state.Messages.length) {
+        this.search(apiMessages, ev.target.id)
+        this.setState({ loading:true })
+      }
       this.setState({ triangleRight: 115 })
     }
     
     else if (ev.target.id === 'Noticias') {
-      if(!this.state.Noticias.length) this.search(apiNoticias, ev.target.id)
+      if(!this.state.Noticias.length) {
+        this.search(apiNoticias, ev.target.id)
+        this.setState({ loading:true })
+      }
       this.setState({ triangleRight: 75 })
     }
 
@@ -172,21 +185,21 @@ class Menu extends Component {
             <ContainerNotification>
               {
                 this.state.typeNotification === 'Artistas' && (
-                  <NotificationMessage notificaciones = {this.state.Artistas}
+                  <NotificationMessage notificaciones = {this.state.Artistas} loading = {this.state.loading}
                     typeNotification = {this.state.typeNotification}
                   />
                 )
               }
               {
                 this.state.typeNotification === 'Messages' && (
-                  <NotificationMessage notificaciones = {this.state.Messages}
+                  <NotificationMessage notificaciones = {this.state.Messages} loading = {this.state.loading}
                   typeNotification = {this.state.typeNotification}
                   />
                 )
               }
               {
                 this.state.typeNotification === 'Noticias' && (
-                  <NotificationMessage notificaciones = {this.state.Noticias}
+                  <NotificationMessage notificaciones = {this.state.Noticias} loading = {this.state.loading}
                   typeNotification = {this.state.typeNotification}
                   />
                 )

@@ -1,5 +1,6 @@
 import React from 'react'
 import User from './User'
+import Sppiner from './Sppiner'
 import '../css/NotificacionesMessage.css'
 
 const NotificationMessage = props => (
@@ -10,6 +11,7 @@ const NotificationMessage = props => (
     
     <div className="NotificationMessage-body">
       <ul>
+        { props.loading && <Sppiner/>}
         {
           props.notificaciones.map(item =>{
           return  <li key={item.id} className="NotificationMessage-body-item">
