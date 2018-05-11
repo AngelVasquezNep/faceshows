@@ -14,7 +14,32 @@ import NotificationMessage from './NotificationMessage'
 
 const Logo = "/images/tickets.png"
 
+
 class Menu extends Component {
+  
+  itemMenuDashboard = [
+    {
+      className: "Users",
+      title: "Solicitudes de Artistas",
+      img: friends,
+      alt: "Friends",
+      id: "Artistas"
+    },
+    {
+      className: "Message",
+      title: "Mensajes",
+      img: message,
+      alt: "Message",
+      id: "Messages"
+    },
+    {
+      className: "Menu-Noticias",
+      title: "Noticias",
+      img: world,
+      alt: "News",
+      id: "Noticias"
+    }
+  ]
 
   state = {
     Artistas: [],
@@ -72,26 +97,25 @@ class Menu extends Component {
               <span>Inicio</span>
             </a>
 
-            <div  className="Users" 
-                  title="Solicitudes de Programas" 
-                  onClick = { this.handleClickMenu } 
-                  >
-                  <img src={friends} alt="Friends" id="Artistas"/>
-            </div>
-
-            <div  className="Message" 
-                  title="Mensajes" 
-                  onClick = { this.handleClickMenu } 
-                  >
-                  <img src={message} alt="Message" id="Messages"/>
-            </div>
-
-            <div  className="Menu-Noticias"
-                  title="Noticias"
-                  onClick = { this.handleClickMenu } 
-                  >
-                  <img src={world} alt="News" id="Noticias"/>
-            </div>
+            {
+              this.itemMenuDashboard.map( item =>{
+                return <div className={item.className}
+                        style= {{ position: 'Relative' }}
+                        title = {item.title}
+                        onClick = {this.handleClickMenu}
+                        key={item.id}
+                       >
+                      <img src={item.img} alt={item.alt} id={item.id}/>
+                      
+                      {
+                        this.state.isShowNotification && this.state.typeNotification === item.id &&
+                        <div className="NotificationMessage-cuadrado"
+                              style={{ right: 5 }}
+                        ></div>
+                      }
+                </div>
+              })
+            }
 
             <div className="Help" title="Ayuda Rápida">
               <img src={help} alt="Help"/>
@@ -101,14 +125,8 @@ class Menu extends Component {
               <img src={triangle} alt="Configuración"/>
             </div>
 
-            {
-              this.state.isShowNotification && 
-              <div className="NotificationMessage-cuadrado"
-                    style={{ right: this.state.triangleRight }}
-              ></div>
-            }
-
           </nav>
+
           {
             this.state.isShowNotification && 
             <ContainerNotification>
@@ -119,8 +137,7 @@ class Menu extends Component {
             
             </ContainerNotification>
           }
-            
-        
+
         </div>
       </div>
     )
