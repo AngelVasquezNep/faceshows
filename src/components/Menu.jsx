@@ -92,17 +92,17 @@ class Menu extends Component {
     }
 
     if (ev.target.id === 'Artistas') {
-      if(this.state.typeNotification !== ev.target.id) this.search(apiArtistas, ev.target.id)
+      if(!this.state.Artistas.length) this.search(apiArtistas, ev.target.id)
       this.setState({ triangleRight: 155 })
     }
     
     else if (ev.target.id === 'Messages') {
-      if(this.state.typeNotification !== ev.target.id) this.search(apiMessages, ev.target.id)
+      if(!this.state.Messages.length) this.search(apiMessages, ev.target.id)
       this.setState({ triangleRight: 115 })
     }
     
     else if (ev.target.id === 'Noticias') {
-      if(this.state.typeNotification !== ev.target.id) this.search(apiNoticias, ev.target.id)
+      if(!this.state.Noticias.length) this.search(apiNoticias, ev.target.id)
       this.setState({ triangleRight: 75 })
     }
 
@@ -171,11 +171,25 @@ class Menu extends Component {
             this.state.isShowNotification && 
             <ContainerNotification>
               {
-
-                <NotificationMessage
-                  notificaciones = {this.state.notificaciones}
+                this.state.typeNotification === 'Artistas' && (
+                  <NotificationMessage notificaciones = {this.state.Artistas}
+                    typeNotification = {this.state.typeNotification}
+                  />
+                )
+              }
+              {
+                this.state.typeNotification === 'Messages' && (
+                  <NotificationMessage notificaciones = {this.state.Messages}
                   typeNotification = {this.state.typeNotification}
-                />
+                  />
+                )
+              }
+              {
+                this.state.typeNotification === 'Noticias' && (
+                  <NotificationMessage notificaciones = {this.state.Noticias}
+                  typeNotification = {this.state.typeNotification}
+                  />
+                )
               }
 
             </ContainerNotification>
