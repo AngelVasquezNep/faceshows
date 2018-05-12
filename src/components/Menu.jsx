@@ -62,21 +62,6 @@ class Menu extends Component {
         notificaciones: json.tracks.items,
         loading: false
       })
-      // if(type === 'Artistas') this.setState({ 
-      //   Artistas: json.tracks.items,
-      //   notificaciones: json.tracks.items,
-      //   loading: false
-      // })
-      // else if(type === 'Messages') this.setState({ 
-      //   Messages: json.tracks.items,
-      //   notificaciones: json.tracks.items,
-      //   loading: false
-      // })
-      // else if(type === 'Noticias') this.setState({ 
-      //   Noticias: json.tracks.items,
-      //   notificaciones: json.tracks.items,
-      //   loading: false
-      // })
     })
     .catch(error => {
       console.log("LO SENTIMOS, TUVIMOS UN ERROR: " + error)
@@ -105,7 +90,7 @@ class Menu extends Component {
         this.search(apiArtistas, ev.target.id)
         this.setState({ loading:true })
       }
-      this.setState({ triangleRight: 155 })
+      this.setState({ triangleRight: 155, notificaciones: this.state.Artistas })
     }
     
     else if (ev.target.id === 'Messages') {
@@ -113,7 +98,7 @@ class Menu extends Component {
         this.search(apiMessages, ev.target.id)
         this.setState({ loading:true })
       }
-      this.setState({ triangleRight: 115 })
+      this.setState({ triangleRight: 115, notificaciones: this.state.Messages })
     }
     
     else if (ev.target.id === 'Noticias') {
@@ -121,7 +106,7 @@ class Menu extends Component {
         this.search(apiNoticias, ev.target.id)
         this.setState({ loading:true })
       }
-      this.setState({ triangleRight: 75 })
+      this.setState({ triangleRight: 75, notificaciones: this.state.Noticias })
     }
 
     this.menuItem = ev.target.id
@@ -189,27 +174,10 @@ class Menu extends Component {
             this.state.isShowNotification && 
             <ContainerNotification>
               {
-                this.state.typeNotification === 'Artistas' && (
-                  <NotificationMessage notificaciones = {this.state.Artistas} loading = {this.state.loading}
+                  <NotificationMessage notificaciones = {this.state.notificaciones} loading = {this.state.loading}
                     typeNotification = {this.state.typeNotification}
                   />
-                )
               }
-              {
-                this.state.typeNotification === 'Messages' && (
-                  <NotificationMessage notificaciones = {this.state.Messages} loading = {this.state.loading}
-                  typeNotification = {this.state.typeNotification}
-                  />
-                )
-              }
-              {
-                this.state.typeNotification === 'Noticias' && (
-                  <NotificationMessage notificaciones = {this.state.Noticias} loading = {this.state.loading}
-                  typeNotification = {this.state.typeNotification}
-                  />
-                )
-              }
-
             </ContainerNotification>
           }
 
