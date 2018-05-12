@@ -1,25 +1,22 @@
 import React, {Component} from 'react'
 import '../css/Relase.css'
 
-class Item extends Component {
+const Item = props => {
   
-  handleClick = ev => {
-    this.props.handleClick(this.props.id)
-  }
+    const handleClick = ev => {
+      props.handleClick(props.name, props.id)
+    }
   
-  render () {
     return (
-    <div 
-      onClick={this.handleClick}
-      className={"Relase--item" + " " + (this.props.active === this.props.id && "active" ) } 
-      title={this.props.name}
-      >
-      <img src={this.props.img} alt={this.props.name} />
-      <p> {this.props.name} </p>
-    </div>
+      <div 
+        onClick={handleClick}
+        className={"Relase--item" + " " + (props.active === props.id && "active" ) } 
+        title={props.name}
+        >
+        <img src={props.img} alt={props.name} />
+        <p> {props.name} </p>
+      </div>
     )
-  }
 }
-
 
 export default Item

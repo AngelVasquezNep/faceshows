@@ -10,7 +10,9 @@ class ListItems extends Component {
     active: 'Maratonicas'
   }
 
-  handleClick = (id) => {
+  handleClick = (name, id) => {
+    this.props.handleSearch(name)
+    console.log(name, id)
     this.setState({
       active:id
     })

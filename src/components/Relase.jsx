@@ -4,7 +4,9 @@ import RelaseCategory from './Relase-category'
 
 const Relase = props => (
   <div className="Relase">
-    <RelaseCategory/>
+    <RelaseCategory
+    handleSearch = {props.handleSearch}
+    />
   </div>
 )
 

@@ -87,10 +87,13 @@ class App extends PureComponent {
         
         <Menu
             handleSearch = { this.handleSearch }
-        />
+            />
         
         <Container>
-          <Relase/>
+          
+          <Relase
+            handleSearch = { this.handleSearch }
+          />
           
             <Noticias resultados = { this.state.resultados } 
                       fetchLoadingNoticias = { this.state.fetchLoadingNoticias }
