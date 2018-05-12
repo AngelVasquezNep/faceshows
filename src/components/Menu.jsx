@@ -57,21 +57,26 @@ class Menu extends Component {
 
     searchApi(value)
     .then(json => {
-      if(type === 'Artistas') this.setState({ 
-        Artistas: json.tracks.items,
+      this.setState({ 
+        [type]: json.tracks.items,
         notificaciones: json.tracks.items,
         loading: false
       })
-      else if(type === 'Messages') this.setState({ 
-        Messages: json.tracks.items,
-        notificaciones: json.tracks.items,
-        loading: false
-      })
-      else if(type === 'Noticias') this.setState({ 
-        Noticias: json.tracks.items,
-        notificaciones: json.tracks.items,
-        loading: false
-      })
+      // if(type === 'Artistas') this.setState({ 
+      //   Artistas: json.tracks.items,
+      //   notificaciones: json.tracks.items,
+      //   loading: false
+      // })
+      // else if(type === 'Messages') this.setState({ 
+      //   Messages: json.tracks.items,
+      //   notificaciones: json.tracks.items,
+      //   loading: false
+      // })
+      // else if(type === 'Noticias') this.setState({ 
+      //   Noticias: json.tracks.items,
+      //   notificaciones: json.tracks.items,
+      //   loading: false
+      // })
     })
     .catch(error => {
       console.log("LO SENTIMOS, TUVIMOS UN ERROR: " + error)
