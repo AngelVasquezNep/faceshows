@@ -1,33 +1,31 @@
-import React, {Component} from 'react'
+import React from 'react'
 import '../css/NoticiaItem.css'
 import User from './User'
 
-class NoticiaItem extends Component {
+const NoticiaItem = props => {
 
-  handleItemClik = () => {
-    this.props.handleClikItemFullScreen(this.props)
+  const handleItemClik = () => {
+    props.handleClikItemFullScreen(props)
   }
-  
-  render () {
-    return(
-      <div className="NoticiaItem">
-  
-        <User 
-            image={ this.props.album.images[0].url } 
-            name={this.props.artists[0].name} 
-          />
-      
-        <img className="NoticiaItem-img" 
-          src={ this.props.album.images[0].url } 
-          alt={this.props.album.name}
-          onClick = { this.handleItemClik }
+
+  return(
+    <div className="NoticiaItem" >
+
+      <User 
+          image={ props.album.images[0].url } 
+          name={props.artists[0].name} 
         />
-        
-        <p className="NoticiasItem-name"> {this.props.album.name} </p>
-        
-      </div>
-    )
-  }
+    
+      <img className="NoticiaItem-img" 
+        src={ props.album.images[0].url } 
+        alt={props.album.name}
+        onClick = { handleItemClik }
+      />
+      
+      <p className="NoticiasItem-name"> {props.album.name} </p>
+      
+    </div>
+  )
 }
 
 
