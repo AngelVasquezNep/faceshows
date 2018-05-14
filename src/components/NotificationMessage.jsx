@@ -9,7 +9,7 @@ const NotificationMessage = props => {
   const {deleteElementOfArray, typeNotification} = props
 
   const deleteElement = index => {
-    deleteElementOfArray(typeNotification, index)
+    deleteElementOfArray(typeNotification.toString(), index)
   }
 
   return (

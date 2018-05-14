@@ -114,10 +114,12 @@ class Menu extends Component {
   }
 
   deleteElementOfArray = (array, position) => {
-    // this.setState((prevState, props) => ({
-    //   [array]: prevState.array.splice(position, 1)
-    // }))
-    console.log(array, position)
+    const aux = this.state.notificaciones
+    this.state.notificaciones.splice(position, 1)
+      this.setState({
+        notificaciones: aux,
+        [array]:aux
+      })
   }
 
   render() {
