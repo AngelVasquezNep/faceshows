@@ -24,10 +24,17 @@ const NotificationMessage = props => {
           {
             props.notificaciones.map((item,index) =>{
             return  <li key={item.id} className="NotificationMessage-body-item">
+                      
                       <User 
                         image={ item.album.images[0].url } 
                         name={item.artists[0].name}
-                      />
+                        Width={props.typeNotification === 'Messages' && '100%' }
+                      >
+                        {props.typeNotification === 'Messages' && (
+                          <span>{item.album.name}</span>
+                        )}
+                      </User>
+
                       {props.typeNotification === 'Artistas' && (
                         <AceptarAmistad
                         index = {index}
