@@ -113,6 +113,13 @@ class Menu extends Component {
 
   }
 
+  deleteElementOfArray = (array, position) => {
+    // this.setState((prevState, props) => ({
+    //   [array]: prevState.array.splice(position, 1)
+    // }))
+    console.log(array, position)
+  }
+
   render() {
 
     return (
@@ -174,8 +181,11 @@ class Menu extends Component {
             this.state.isShowNotification && 
             <ContainerNotification>
               {
-                  <NotificationMessage notificaciones = {this.state.notificaciones} loading = {this.state.loading}
+                  <NotificationMessage notificaciones = {this.state.notificaciones} 
+                    loading = {this.state.loading}
                     typeNotification = {this.state.typeNotification}
+                    deleteElementOfArray = {this.deleteElementOfArray}
+                    
                   />
               }
             </ContainerNotification>
