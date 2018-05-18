@@ -1,5 +1,5 @@
 import React from 'react'
-import './icon.sass'
+import './icon.css'
 
 function Icon (props) {
   
@@ -13,8 +13,9 @@ function Icon (props) {
           height={size}
           viewBox={ props.viewBox || "0 0 32 32"}
           >
-          { props.children }
+        { props.children }
         </svg>
+        <p> { props.value || ""} </p>
       </button>
     </div>
   )
