@@ -2,14 +2,14 @@
   margin-top: 5px;
 }
 
-
-
 .Megusta--info {
   display: flex;
   justify-content: space-between;
   color: #696969;
+  margin: 5px 0;
 }
 .Megusta--info p {
+  font-size: .9rem;
   margin: 0;
 }
 
