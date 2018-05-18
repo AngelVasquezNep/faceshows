@@ -29,7 +29,9 @@ const NoticiaItem = props => {
           />
       </div>
 
-      <Megusta/>
+      <Megusta likes = {props.duration_ms} 
+               compartidos = {props.popularity}
+               />
       
     </div>
   )

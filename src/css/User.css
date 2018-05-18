@@ -27,6 +27,10 @@
   overflow: hidden;
 }
 
+.User-info p {
+  align-self: baseline;
+}
+
 .User:hover .User-nombre {
   text-decoration: underline;
 }
