@@ -3,7 +3,8 @@ import AppContainer from './components/App-container.jsx'
 import Menu from './components/Menu'
 import Relase from './components/Relase'
 import Container from './components/Container'
-import Historias from './components/Historias';
+// import Historias from './components/Historias';
+import RelaseRight from './components/Relase-right';
 import Noticias from './components/Noticias';
 import ModalContainer from './components/modalContainer';
 import Modal from './components/Modal';
@@ -101,7 +102,8 @@ class App extends PureComponent {
                       handleClikItemFullScreen = {this.handleClikItemFullScreen}
                       />
           
-            <Historias />
+            <RelaseRight/>
+            {/* <Historias /> */}
         </Container>
         
         {
