@@ -1,4 +1,19 @@
 .Megusta {
+  margin-top: 5px;
+}
+
+
+
+.Megusta--info {
+  display: flex;
+  justify-content: space-between;
+  color: #696969;
+}
+.Megusta--info p {
+  margin: 0;
+}
+
+.Megusta--botones {
   display: flex;
   justify-content: space-evenly;
   margin-top: 10px;
