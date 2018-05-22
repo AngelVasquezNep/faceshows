@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Button from './Button'
-import {Like, Chat} from './icon/icon'
+import {Like, Chat, Share} from './icon/icon'
 import '../css/Button.css'
 import '../css/Megusta.css'
 
@@ -32,9 +32,11 @@ class Megusta extends Component {
             />
           </div>
           <div className="Megusta--compartir">
-            <Button className ="btn transparent" >
-              Compartir
-            </Button>
+            <Share
+              fill = "#393939"
+              size = { 17 }
+              value = "Compartir"
+            />
           </div>
         </div>
 
