@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import Button from './Button'
 import {Like, Chat, Share} from './icon/icon'
 import '../css/Button.css'
 import '../css/Megusta.css'

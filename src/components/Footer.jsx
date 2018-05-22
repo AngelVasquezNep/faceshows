@@ -5,7 +5,10 @@ const Footer = props => (
   <footer className="Footer">
     <p> "Práctica, práctica como demente. Práctica hasta ser excelente" </p>
     <small>Create by 
-      <a target="_blank" href="https://angelvasquez.now.sh"> Ángel Vásquez </a>
+      <a target="_blank" 
+            href="https://angelvasquez.now.sh"
+            rel="noopener noreferrer" 
+            > Ángel Vásquez </a>
     </small>
   </footer>
 )

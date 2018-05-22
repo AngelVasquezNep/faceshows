@@ -1,0 +1,39 @@
+.ChatContent {
+  border: 1px solid rgb(75, 74, 74);
+  height: 500px;
+  margin-bottom: 10px;
+  overflow-y: scroll;
+  background-color: #fff;
+  padding: 0 20px;
+  box-sizing: border-box;
+  background-color: #fdfdfd;
+  caption-side: bottom
+}
+
+.ChatItem {
+}
+
+.ChatItem--content {
+  display: flex;
+  box-sizing: border-box;
+  text-align: left;
+  text-align: -webkit-left;
+  text-align: -moz-left;
+}
+
+.ChatItem--content.ChatItem-User {
+  justify-content: flex-end;
+  text-align: right;
+  text-align: -webkit-right;
+  text-align: -moz-right;
+}
+
+.ChatItem--content p{
+  background-color: #f1f0f0;
+  background-color: #0084ff;
+  color: #fff;
+  width: max-content;
+  margin: 5px 0;
+  padding: 5px 13px;
+  border-radius: 27px;
+}
