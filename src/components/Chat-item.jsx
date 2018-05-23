@@ -3,8 +3,8 @@ import '../css/ChatItem.css'
 
 const chatItem = props => {
   
-  const text1 = 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat quos minima eum enim corrupti eius vero aspernatur '
-  const text2 = 'Lorem, ipsum  '
+  const text1 = 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat quos minima eum enim corrupti eius vero aspernatur Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat quos minima eum enim corrupti eius vero aspernatur '
+  const text2 = 'Lorem, ipsum Hola'
   const text3 = 'Lorem, ipsum dolor sit eius vero aspernatur '
 
   const arreglo = [
@@ -36,12 +36,14 @@ const chatItem = props => {
             return(
 
             <div key={index} 
-                 className= { item.author === 'User' ? 'ChatItem ChatItem-User' : "ChatItem" } >
-              <div className="ChatItem--width85">
-                <div className= 'ChatItem--content'>
-                    <span>
-                      { item.content } 
-                    </span>
+                 className=  { item.author === 'User' ?  "ChatItem ChatItem-right" : 'ChatItem ChatItem-left' } >
+              <div>
+                <div className="ChatItem--width85">
+                  <div className= 'ChatItem--content'>
+                      <span>
+                        { item.content } 
+                      </span>
+                  </div>
                 </div>
               </div>
             </div>
