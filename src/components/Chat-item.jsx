@@ -9,8 +9,8 @@ const chatItem = props => {
 
   const arreglo = [
     { content: text1, author: 'User' },
-    { content: text2, author: 'User' },
     { content: text3, author: 'Friend' },
+    { content: text2, author: 'User' },
     { content: text1, author: 'User' },
     { content: text2, author: 'User' },
     { content: text1, author: 'Friend' },
@@ -33,13 +33,19 @@ const chatItem = props => {
 
       {
         arreglo.map( (item, index) => {
-          return( 
-          <div key={index} className="ChatItem">
-              <div 
-                className= { item.author === 'User' ? 'ChatItem--content ChatItem-User' : 'ChatItem--content'}>
-                <p> { item.content } </p>
+            return(
+
+            <div key={index} 
+                 className= { item.author === 'User' ? 'ChatItem ChatItem-User' : "ChatItem" } >
+              <div className="ChatItem--width85">
+                <div className= 'ChatItem--content'>
+                    <span>
+                      { item.content } 
+                    </span>
+                </div>
               </div>
-          </div>
+            </div>
+
             )
           })
       }
