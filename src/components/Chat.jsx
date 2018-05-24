@@ -4,8 +4,9 @@ import ChatItem from './Chat-item.jsx'
 class Chat extends Component {
   render () {
     return (
-      <div className="Chat" >
-        <ChatItem/>
+      <div className="Chat">
+        <ChatItem
+        />
       </div>
     )
   }

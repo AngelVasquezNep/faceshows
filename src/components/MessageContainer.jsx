@@ -19,6 +19,13 @@ class MessageContainer extends Component{
     })
   }
 
+  setRef = element => {
+    this.chat = element
+  } 
+
+  componentDidMount () {
+    this.chat.scrollTop = this.chat.scrollHeight
+  }
   render () {
 
     return (
@@ -36,8 +43,11 @@ class MessageContainer extends Component{
           </div>
           <div className="MessageContainer-content"
             style = { !this.state.isShow ? this.height : this.none }
+            id = "Chat"
+            ref = { this.setRef }
           >
-            <Chat/> 
+            <Chat
+            /> 
           </div>
         </div>
       </Modal>
