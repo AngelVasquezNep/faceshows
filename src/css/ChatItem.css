@@ -1,8 +1,8 @@
 .ChatContent {
-  border: 1px solid rgb(75, 74, 74);
-  height: 500px;
+  overscroll-behavior: contain contain;
+  height: inherit;
+  /* border: 1px solid rgb(75, 74, 74); */
   margin-bottom: 10px;
-  overflow-y: scroll;
   background-color: #fff;
   padding: 0 15px;
   box-sizing: border-box;
@@ -38,14 +38,21 @@
   max-width: 85%;
 }
 
+.ChatItem.ChatItem-right .ChatItem--content{
+  background-color: #0084ff;
+  color: #fff;
+}
+
+.ChatItem.ChatItem-left .ChatItem--content{
+  background-color: #f1f0f0;
+  color: initial;
+}
+
 .ChatItem--content {
   border-radius: 25px;
   box-sizing: border-box;
   margin: 5px 0;
   padding: 5px 10px;
-  background-color: #f1f0f0;
-  background-color: #0084ff;
-  color: #fff;
 }
 
 .ChatItem--content span {

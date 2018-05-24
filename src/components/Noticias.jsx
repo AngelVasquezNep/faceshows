@@ -1,13 +1,9 @@
 import React from 'react'
 import NoticiaItem from './Noticia-item.jsx'
 import Spinner from './Spinner';
-import Chat from './Chat'
-// import Api from '../Api-noticias.json'
 
 const Noticias = props => (
   <div className="Noticias-Container">
-
-    <Chat/>
 
     <div className="Noticias">
       {

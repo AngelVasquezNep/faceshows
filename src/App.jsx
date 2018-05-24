@@ -9,6 +9,7 @@ import Noticias from './components/Noticias';
 import ModalContainer from './components/modalContainer';
 import Modal from './components/Modal';
 import ItemFullScreen from './components/ItemFullScreen';
+import MessageContainer from './components/MessageContainer';
 import {searchApi, listArtists, artistRandom} from './services/searchApi.js'
 
 //simport Api from './Api-noticias.json'
@@ -103,30 +104,24 @@ class App extends PureComponent {
                       />
           
             <RelaseRight/>
-            {/* <Historias /> */}
+
         </Container>
-        
+
         {
           this.state.isItemFullScreen &&
           <ModalContainer>
             <Modal
               handleClick = { this.closeModal }
-            >
+              >
               <ItemFullScreen
                 item = { this.state.itemFullScreen }
                 />
             </Modal>
           </ModalContainer>
         }
-        
-        {/* Menú-Buscador */}
-          {/* Relase - Grupos */}
-          {/* Noticias */}
-          {/* Relise - Right */}
-            {/* Historias */}
-            {/* Cosas */}
-            {/* Footer */}
-          {/* Chat */}
+
+        <MessageContainer/>
+
       </AppContainer>
     )
   }
