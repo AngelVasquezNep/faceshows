@@ -1,5 +1,5 @@
-export const searchApi= (value) => {
-  return fetch(`https://platzi-music-api.now.sh/search?type=track&query=${value}`)
+export const searchApi= (value, limit = 20) => {
+  return fetch(`https://platzi-music-api.now.sh/search?type=track&query=${value}&limit=${limit}`)
   .then(res => res.json())
   .then(json => json )
   .catch(error => {

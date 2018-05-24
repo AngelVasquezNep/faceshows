@@ -16,14 +16,15 @@ const chatItem = props => {
     { content: text1, author: 'Friend' },
     { content: text3, author: 'User' },
     { content: text1, author: 'User' },
-    { content: text2, author: 'Friend' },
     { content: text2, author: 'User' },
     { content: text3, author: 'User' },
+    { content: text1, author: 'Friend' },
     { content: text1, author: 'User' },
     { content: text2, author: 'User' },
+    { content: text3, author: 'User' },
     { content: text3, author: 'Friend' },
-    { content: text3, author: 'User' },
-    { content: text1, author: 'User' },
+    { content: text2, author: 'User' },
+    { content: text2, author: 'Friend' },
     { content: text2, author: 'User' },
     { content: text3, author: 'User' }
   ]

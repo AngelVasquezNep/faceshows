@@ -6,7 +6,7 @@ import '../css/MessageContainer.css'
 class MessageContainer extends Component{
 
   state = {
-    isShow: true
+    isShow: false
   }
   width = { width: 200 }
   backgroundColor = { backgroundColor: '#0084ff', color: '#FFFFFF' }
@@ -43,7 +43,6 @@ class MessageContainer extends Component{
           </div>
           <div className="MessageContainer-content"
             style = { !this.state.isShow ? this.height : this.none }
-            id = "Chat"
             ref = { this.setRef }
           >
             <Chat

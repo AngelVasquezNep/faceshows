@@ -5,18 +5,18 @@
       "list": [
         {
           "img": "/images/food.png",
-          "name": "Maratonicas",
-          "id":"Maratonicas"
+          "name": "Imagine Dragons",
+          "id":"Imagine-Dragons"
         },
         {
           "img": "/images/tickets.png",
-          "name": "Como en el cine",
-          "id":"Como-en-el-cine"
+          "name": "Arctic Monkeys",
+          "id":"Arctic-Monkeys"
         },
         {
           "img": "/images/hd.png",
-          "name": "Full HD",
-          "id":"Full-HD"
+          "name": "Bruno Mars",
+          "id":"Bruno-Mars"
         }
       ]
     },
@@ -25,18 +25,18 @@
       "list": [
         {
           "img": "/images/chaplin.png",
-          "name": "El gran Chaplin",
-          "id":"El-gran-Chaplin"
+          "name": "Justin Timberlake",
+          "id":"Justin-Timberlake"
         },
         {
           "img": "/images/tv-old.png",
-          "name": "Tv de los 80",
-          "id":"Tv-de-los-80"
+          "name": "Rihanna",
+          "id":"Rihanna"
         },
         {
           "img": "/images/popcorn.png",
-          "name": "Para comer",
-          "id":"Para-comer"
+          "name": "Coldplay",
+          "id":"Coldplay"
         }
       ]
     },
@@ -45,48 +45,43 @@
       "list": [
         {
           "img": "/images/3d.png",
-          "name": "3d",
-          "id":"3d"
+          "name": "Guns N' Roses",
+          "id":"Guns-N-Roses"
         },
         {
           "img": "/images/director.png",
-          "name": "Para disfrutar",
-          "id":"Para-disfrutar"
+          "name": "Katy Perry",
+          "id":"Katy-Perry"
         },
         {
           "img": "/images/countdown.png",
-          "name": "Obras maestras",
-          "id":"Obras-maestras"
+          "name": "The Rolling Stones",
+          "id":"The-Rolling-Stones"
         },
         {
           "img": "/images/people.png",
-          "name": "Con amigos",
-          "id":"Con-amigos"
+          "name": "Roger Waters",
+          "id":"Roger-Waters"
         },
         {
           "img": "/images/cinta.png",
-          "name": "Clásicos",
-          "id":"Clásicos"
+          "name": "Avicii",
+          "id":"Avicii"
         },
         {
           "img": "/images/cinema.png",
-          "name": "Sé el director",
-          "id":"Sé-el-director"
+          "name": "Taylor Swift",
+          "id":"Taylor-Swift"
         },
         {
           "img": "/images/cinemaSite.png",
-          "name": "Al cine",
-          "id":"Al-cine"
+          "name": "Beyoncé",
+          "id":"Beyoncé"
         },
         {
           "img": "/images/corte.png",
-          "name": "Corte-Cámara-acción",
-          "id":"Corte-Cámara-acción"
-        },
-        {
-          "img": "/images/comedy.png",
-          "name": "Risas",
-          "id":"Risas"
+          "name": "Enrique Iglesias",
+          "id":"Enrique-Iglesias"
         }
       ]
     }
