@@ -1,12 +1,15 @@
 import React from 'react'
-import BaseCard from 'components/Cards/BaseCard'
+import PostCard from 'components/Cards/PostCard'
 
-const ListPost = ({ posts }) =>
-  posts.map((_, i) => (
-    <BaseCard>
-      <p key={i}>Hola</p>
-    </BaseCard>
-  ))
+import S from './index.module.css'
+
+const ListPost = ({ posts }) => (
+  <section className={S['ListPost']}>
+    {posts.map((post, i) => (
+      <PostCard {...post} className="PostCardItem" key={i} />
+    ))}
+  </section>
+)
 
 ListPost.defaultProps = {
   posts: []

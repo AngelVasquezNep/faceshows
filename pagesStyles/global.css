@@ -5,11 +5,16 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: var(--main-background-color);
 }
 
 :root {
+  --main-background-color: #f0f2f5; 
   --main-text-color: skyblue;
   --main-border-color: gray;
 
   --main-border-radius: 5px;
+
+
+  --colors-white: white;
 }

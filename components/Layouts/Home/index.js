@@ -1,22 +1,19 @@
 import React from 'react'
+
 import Menu from 'components/Menu'
 import LeftAside from 'components/LeftAside'
 import RightAside from 'components/RightAside'
 import MainContent from 'components/MainContent'
 
-import ListPosts from 'components/ListPosts'
-
 import styles from './index.module.css'
 
-const HomeLayout = ({ posts }) => {
+const HomeLayout = ({ children, leftAside, rightAside }) => {
   return (
     <main className={styles['HomeLayout-container']}>
       <Menu />
-      <LeftAside />
-      <MainContent>
-        <ListPosts posts={posts} />
-      </MainContent>
-      <RightAside />
+      <LeftAside>{leftAside}</LeftAside>
+      <MainContent>{children}</MainContent>
+      <RightAside>{rightAside}</RightAside>
     </main>
   )
 }

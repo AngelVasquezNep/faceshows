@@ -1,0 +1,15 @@
+.PostCard {
+  background-color: var(--colors-white);
+  border-radius: var(--main-border-radius);
+}
+
+.PostCard .PostCard-header {
+  padding: 0.5rem;
+}
+
+
+
+img.PostImage {
+  min-width: 100%;
+  max-width: 100%;
+}

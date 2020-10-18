@@ -1,8 +1,8 @@
 import React from 'react'
 
-const LeftAside = () => (
+const LeftAside = ({ children }) => (
   <aside id="LeftAsideContainer" className="LeftAside-container">
-    left-sidebar
+    {children}
   </aside>
 )
 
