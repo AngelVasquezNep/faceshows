@@ -3,28 +3,25 @@
   display: grid;
   grid-template-areas: "menu      menu    menu"
                        "asideLeft content asideRight";
-  min-height: 100vh;
+  height: 100vh;
   grid-template-rows: auto 1fr;
   grid-template-columns: 1fr 2fr 1fr;
 }
 
 .HomeLayout-container :global(#MainMenuContainer.MainMenu-container) {
   grid-area: menu;
-  border: 1px solid red;
   min-height: 3.8rem;
 }
 
 .HomeLayout-container :global(#LeftAsideContainer.LeftAside-container) {
   grid-area: asideLeft;
-  border: 1px solid red;
 }
 
 .HomeLayout-container :global(#MainContentContainer.MainContent-container) {
   grid-area: content;
-  border: 1px solid red;
+  overflow-y: scroll;
 }
 
 .HomeLayout-container :global(#RightAsideContainer.RightAside-container) {
   grid-area: asideRight;
-  border: 1px solid red;
 }

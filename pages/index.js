@@ -9,7 +9,7 @@ const Index = () => (
       <title>🔥 Faceshows</title>
     </Head>
 
-    <Home />
+    <Home posts={new Array(1).fill(1)} />
   </Fragment>
 )
 

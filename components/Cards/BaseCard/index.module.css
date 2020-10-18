@@ -1,0 +1,7 @@
+.BaseCard.bordered {
+  border: 1px solid var(--main-border-color);
+}
+
+.BaseCard.rounded {
+  border-radius: var(--main-border-radius);
+}
