@@ -1,10 +1,8 @@
-import React from 'react'
-import '../css/ContainerNotification.css'
+import React from 'react';
+import '../css/ContainerNotification.css';
 
-const ContainerNotification = props => (
-  <div className="ContainerNotification">
-    {props.children}
-  </div>
-)
+const ContainerNotification = (props) => (
+  <div className="ContainerNotification">{props.children}</div>
+);
 
-export default ContainerNotification
+export default ContainerNotification;

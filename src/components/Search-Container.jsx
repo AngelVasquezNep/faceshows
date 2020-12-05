@@ -1,45 +1,43 @@
-import React,{Component} from 'react'
-import Search from './Search'
-
+import React, { Component } from 'react';
+import Search from './Search';
 
 class SearchContainer extends Component {
   state = {
-    value: ""
-  }
-  
-  handleSubmit = ev => {
-    ev.preventDefault()
-    
-    this.props.handleSearch(this.state.value)
+    value: ''
+  };
 
-    this.input.value !== "" &&
-    this.setState({
-      value: ''
-    })
-  
-  }
+  handleSubmit = (ev) => {
+    ev.preventDefault();
 
-  setInputRef = element => {
-    this.input = element
-  }
+    this.props.handleSearch(this.state.value);
 
-  handleInputChange = event => {
+    this.input.value !== '' &&
+      this.setState({
+        value: ''
+      });
+  };
+
+  setInputRef = (element) => {
+    this.input = element;
+  };
+
+  handleInputChange = (event) => {
     this.setState({
       value: event.target.value
-    })
-  }
+    });
+  };
 
-  render () {
+  render() {
     return (
-      <Search 
-        setInput = { this.setInputRef }
-        handleSubmit = { this.handleSubmit }
-        handleChange = {this.handleInputChange}
-        value = { this.state.value }
-        placeHolder = "Busca tu artista favorito"
+      <Search
+        setInput={this.setInputRef}
+        handleSubmit={this.handleSubmit}
+        handleChange={this.handleInputChange}
+        value={this.state.value}
+        placeHolder="Busca tu artista favorito"
       />
-    )
+    );
   }
 }
 
-export default SearchContainer
+export default SearchContainer;

@@ -1,10 +1,8 @@
-import React from 'react'
-import '../css/app.css'
+import React from 'react';
+import '../css/app.css';
 
-const AppContainer = props => (
-  <div className="AppContainer">
-    {props.children}
-  </div>
-)
+const AppContainer = (props) => (
+  <div className="AppContainer">{props.children}</div>
+);
 
-export default AppContainer
+export default AppContainer;

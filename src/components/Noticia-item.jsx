@@ -1,41 +1,34 @@
-import React from 'react'
-import '../css/NoticiaItem.css'
-import User from './User'
-import Megusta from './Megusta'
-import {numberRandom} from '../services/functions'
+import React from 'react';
+import '../css/NoticiaItem.css';
+import User from './User';
+import Megusta from './Megusta';
+import { numberRandom } from '../services/functions';
 
-const NoticiaItem = props => {
-
+const NoticiaItem = (props) => {
   const handleItemClik = () => {
-    props.handleClikItemFullScreen(props)
-  }
+    props.handleClikItemFullScreen(props);
+  };
 
-  return(
-    <div className="NoticiaItem" >
+  return (
+    <div className="NoticiaItem">
       <div>
-        <User 
-            image={ props.album.images[0].url } 
-            name={props.artists[0].name} 
-            >
+        <User image={props.album.images[0].url} name={props.artists[0].name}>
           <p className="User-tiempo"> Hace {numberRandom(2, 24)} horas </p>
         </User>
 
         <p className="NoticiasItem-name"> {props.album.name} </p>
-      
-        <img className="NoticiaItem-img" 
-          src={ props.album.images[0].url } 
+
+        <img
+          className="NoticiaItem-img"
+          src={props.album.images[0].url}
           alt={props.album.name}
-          onClick = { handleItemClik }
-          />
+          onClick={handleItemClik}
+        />
       </div>
 
-      <Megusta likes = {props.duration_ms} 
-               compartidos = {props.popularity}
-               />
-      
+      <Megusta likes={props.duration_ms} compartidos={props.popularity} />
     </div>
-  )
-}
+  );
+};
 
-
-export default NoticiaItem
+export default NoticiaItem;

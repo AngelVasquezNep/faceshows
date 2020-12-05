@@ -1,9 +1,8 @@
-import React from 'react'
-import './icon.css'
+import React from 'react';
+import './icon.css';
 
-function Icon (props) {
-  
-  const { color, size } = props
+function Icon(props) {
+  const { color, size } = props;
   return (
     <div className="Icon">
       <button onClick={props.handleClick}>
@@ -11,14 +10,14 @@ function Icon (props) {
           fill={color}
           width={size}
           height={size}
-          viewBox={ props.viewBox || "0 0 32 32"}
-          >
-        { props.children }
+          viewBox={props.viewBox || '0 0 32 32'}
+        >
+          {props.children}
         </svg>
-        <p> { props.value || ""} </p>
+        <p> {props.value || ''} </p>
       </button>
     </div>
-  )
+  );
 }
 
-export default Icon
+export default Icon;

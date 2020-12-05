@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
-import AppContainer from './components/App-container.jsx'
-import Menu from './components/Menu'
-import Relase from './components/Relase'
-import Container from './components/Container'
+import AppContainer from './components/App-container.jsx';
+import Menu from './components/Menu';
+import Relase from './components/Relase';
+import Container from './components/Container';
 // import Historias from './components/Historias';
 import RelaseRight from './components/Relase-right';
 import Noticias from './components/Noticias';
@@ -10,7 +10,7 @@ import ModalContainer from './components/modalContainer';
 import Modal from './components/Modal';
 import ItemFullScreen from './components/ItemFullScreen';
 import MessageContainer from './components/MessageContainer';
-import {searchApi, listArtists, artistRandom} from './services/searchApi.js'
+import { searchApi, listArtists, artistRandom } from './services/searchApi.js';
 
 //simport Api from './Api-noticias.json'
 // https://www.tvmaze.com/api
@@ -20,24 +20,23 @@ import {searchApi, listArtists, artistRandom} from './services/searchApi.js'
 // API KEY / CLIENT ID ppkVaq40VH8OlOVeifEokl6VmZfBSY8h
 
 class App extends PureComponent {
-  
   search = (value) => {
     searchApi(value)
-    .then(json => {
-      this.setState({
-        resultados: json.tracks.items,
-        fetchLoadingNoticias: false,
-        errorResultados: false
+      .then((json) => {
+        this.setState({
+          resultados: json.tracks.items,
+          fetchLoadingNoticias: false,
+          errorResultados: false
+        });
       })
-    })
-    .catch(error => {
-      console.log("LO SENTIMOS, TUVIMOS UN ERROR: " + error)
-      this.setState({
-        fetchLoadingNoticias: false,
-        errorResultados: true
-      })
-    })
-  }
+      .catch((error) => {
+        console.log('LO SENTIMOS, TUVIMOS UN ERROR: ' + error);
+        this.setState({
+          fetchLoadingNoticias: false,
+          errorResultados: true
+        });
+      });
+  };
 
   state = {
     resultados: [],
@@ -45,85 +44,66 @@ class App extends PureComponent {
     errorResultados: false,
     isItemFullScreen: false,
     itemFullScreen: {}
-  }
-  
-  componentDidMount () {
+  };
 
-    this.search(artistRandom(listArtists))
-
-    
-  }
-  
-  togleScapeEvent = ev => {
-    const keyScape = 27
-    ev.keyCode === keyScape && this.closeModal()
+  componentDidMount() {
+    this.search(artistRandom(listArtists));
   }
 
-  handleSearch = ( value )  => {
-    this.search(value)
-  }
-  
-  handleClikItemFullScreen = item => {
-    
-    window.addEventListener("keyup", this.togleScapeEvent )
-    
+  togleScapeEvent = (ev) => {
+    const keyScape = 27;
+    ev.keyCode === keyScape && this.closeModal();
+  };
+
+  handleSearch = (value) => {
+    this.search(value);
+  };
+
+  handleClikItemFullScreen = (item) => {
+    window.addEventListener('keyup', this.togleScapeEvent);
+
     this.setState({
       itemFullScreen: item,
       isItemFullScreen: true
-    })
-    
-  }
-  
-  closeModal = () => {
+    });
+  };
 
-    window.removeEventListener('keyup', this.togleScapeEvent)
+  closeModal = () => {
+    window.removeEventListener('keyup', this.togleScapeEvent);
     this.setState({
       isItemFullScreen: false
-    })
-  
-  }
+    });
+  };
 
   render() {
     return (
       <AppContainer>
-        
-        <Menu
-            handleSearch = { this.handleSearch }
-            />
-        
-        <Container>
-          
-          <Relase
-            handleSearch = { this.handleSearch }
-          />
-          
-            <Noticias resultados = { this.state.resultados } 
-                      fetchLoadingNoticias = { this.state.fetchLoadingNoticias }
-                      errorResultados = {this.state.errorResultados}
-                      handleClikItemFullScreen = {this.handleClikItemFullScreen}
-                      />
-          
-            <RelaseRight/>
+        <Menu handleSearch={this.handleSearch} />
 
+        <Container>
+          <Relase handleSearch={this.handleSearch} />
+
+          <Noticias
+            resultados={this.state.resultados}
+            fetchLoadingNoticias={this.state.fetchLoadingNoticias}
+            errorResultados={this.state.errorResultados}
+            handleClikItemFullScreen={this.handleClikItemFullScreen}
+          />
+
+          <RelaseRight />
         </Container>
 
-        {
-          this.state.isItemFullScreen &&
+        {this.state.isItemFullScreen && (
           <ModalContainer>
-            <Modal
-              handleClick = { this.closeModal }
-              >
-              <ItemFullScreen
-                item = { this.state.itemFullScreen }
-                />
+            <Modal handleClick={this.closeModal}>
+              <ItemFullScreen item={this.state.itemFullScreen} />
             </Modal>
           </ModalContainer>
-        }
+        )}
 
-        <MessageContainer/>
-
+        <MessageContainer />
       </AppContainer>
-    )
+    );
   }
 }
 

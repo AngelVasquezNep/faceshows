@@ -1,15 +1,14 @@
-import React, {Component} from 'react'
-import ChatItem from './Chat-item.jsx'
+import React, { Component } from 'react';
+import ChatItem from './Chat-item.jsx';
 
 class Chat extends Component {
-  render () {
+  render() {
     return (
       <div className="Chat">
-        <ChatItem
-        />
+        <ChatItem />
       </div>
-    )
+    );
   }
 }
 
-export default Chat
+export default Chat;

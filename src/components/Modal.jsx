@@ -1,18 +1,20 @@
-import React from 'react'
-import '../css/Modal.css'
+import React from 'react';
+import '../css/Modal.css';
 
-function Modal (props) {
+function Modal(props) {
   return (
     <div className="Modal">
-      { props.children }
-      {
-        props.botonVisible && (
-          <button className="Modal-close" onClick={props.handleClick} >&times;</button>
-        )
-      } 
-      <button className="Modal-close" onClick={props.handleClick} >&times;</button>
+      {props.children}
+      {props.botonVisible && (
+        <button className="Modal-close" onClick={props.handleClick}>
+          &times;
+        </button>
+      )}
+      <button className="Modal-close" onClick={props.handleClick}>
+        &times;
+      </button>
     </div>
-  )
+  );
 }
 
-export default Modal
+export default Modal;

@@ -1,13 +1,11 @@
-import React from 'react'
-import '../css/Relase.css'
-import RelaseCategory from './Relase-category'
+import React from 'react';
+import '../css/Relase.css';
+import RelaseCategory from './Relase-category';
 
-const Relase = props => (
+const Relase = (props) => (
   <div className="Relase">
-    <RelaseCategory
-    handleSearch = {props.handleSearch}
-    />
+    <RelaseCategory handleSearch={props.handleSearch} />
   </div>
-)
+);
 
-export default Relase
+export default Relase;

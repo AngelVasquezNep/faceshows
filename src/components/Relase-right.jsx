@@ -1,16 +1,14 @@
-import React from 'react'
-import '../css/Relase-right.css'
-import Historias from './Historias'
-import Footer from './Footer'
+import React from 'react';
+import '../css/Relase-right.css';
+import Historias from './Historias';
+import Footer from './Footer';
 
-const RelaseRight = props => (
+const RelaseRight = (props) => (
   <div className="RelaseRight">
-  
-      <Historias/>
+    <Historias />
 
-      <Footer/>
-  
+    <Footer />
   </div>
-)
+);
 
-export default RelaseRight
+export default RelaseRight;
