@@ -13,7 +13,7 @@ class Historias extends Component {
   };
 
   componentWillMount() {
-    searchApi(apiArtistas, 3)
+    searchApi()
       .then((results) => {
         this.setState({
           users: results.slice(0, 5),
