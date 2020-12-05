@@ -34,6 +34,7 @@ class App extends PureComponent {
   }
 
   componentDidMount() {
+    console.info("VERSION: Catch API error")
     this.search(artistRandom(listArtists));
   }
 
