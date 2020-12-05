@@ -14,12 +14,11 @@ class Historias extends Component {
 
   componentWillMount() {
     searchApi(apiArtistas, 3)
-      .then((json) => {
+      .then((results) => {
         this.setState({
-          users: json.tracks.items,
+          users: results.slice(0, 5),
           loading: false
         });
-        console.log(json);
       })
       .catch((err) => {
         this.setState({
@@ -38,16 +37,14 @@ class Historias extends Component {
         {this.state.users.map((item, index) => {
           return (
             <li key={item.id} className="NotificationMessage-body-item">
-              <User
-                image={item.album.images[0].url}
-                name={item.artists[0].name}
-                Width="100%"
-              >
-                <span>{item.album.name}</span>
+              <User image={item.image} name={item.name} Width="100%">
+                <span>{item.name}</span>
               </User>
             </li>
           );
         })}
+
+        {this.state.users.length === 0 && <p>Sin Historias</p>}
       </div>
     );
   }

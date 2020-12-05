@@ -24,12 +24,12 @@ const NotificationMessage = (props) => {
             return (
               <li key={item.id} className="NotificationMessage-body-item">
                 <User
-                  image={item.album.images[0].url}
-                  name={item.artists[0].name}
+                  image={item.image}
+                  name={item.name}
                   Width={props.typeNotification === 'Messages' && '100%'}
                 >
                   {props.typeNotification === 'Messages' && (
-                    <span>{item.album.name}</span>
+                    <span>{item.name}</span>
                   )}
                 </User>
 

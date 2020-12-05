@@ -45,10 +45,9 @@ class App extends PureComponent {
 
   search = (value) => {
     searchApi(value)
-      .then((json) => {
-        console.log({ json })
+      .then((results) => {
         this.setState({
-          resultados: json.tracks.items,
+          resultados: results,
           fetchLoadingNoticias: false,
           errorResultados: false
         });

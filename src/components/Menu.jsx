@@ -62,19 +62,15 @@ class Menu extends Component {
     console.log('Busqueda: ' + value);
 
     searchApi(value)
-      .then((json) => {
+      .then((results) => {
         this.setState({
-          [type]: json.tracks.items,
-          notificaciones: json.tracks.items,
+          [type]: results,
+          notificaciones: results,
           loading: false
         });
       })
       .catch((error) => {
         console.log('LO SENTIMOS, TUVIMOS UN ERROR: ' + error);
-        this.setState({
-          // fetchLoadingNoticias: false,
-          // errorResultados: true
-        });
       });
   };
 

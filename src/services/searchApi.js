@@ -1,11 +1,18 @@
+const BASE_URL = 'https://rickandmortyapi.com/api';
+
 export const searchApi = (value, limit = 20) => {
-  return fetch(
-    `https://platzi-music-api.now.sh/search?type=track&query=${value}&limit=${limit}`
-  )
-    .then((res) => res.json())
-    .catch((error) => {
-      console.error('Error at fetch: ', error);
-      return Promise.reject(error)
+  return fetch(`${BASE_URL}/character/?name=${value}`)
+    .then((res) => {
+      if (res.status === 404) {
+        return { results: [] };
+      }
+
+      return res.json();
+    })
+    .then((json) => json.results)
+    .catch((error, ...rest) => {
+      console.error('Error at fetch: ', error, rest);
+      return Promise.reject(error);
     });
 };
 

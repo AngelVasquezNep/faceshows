@@ -12,21 +12,27 @@ const NoticiaItem = (props) => {
   return (
     <div className="NoticiaItem">
       <div>
-        <User image={props.album.images[0].url} name={props.artists[0].name}>
+        <User image={props.image} name={props.name}>
           <p className="User-tiempo"> Hace {numberRandom(2, 24)} horas </p>
         </User>
 
-        <p className="NoticiasItem-name"> {props.album.name} </p>
+        <p className="NoticiasItem-name">
+          {props.species},{' '}
+          {(props.location && props.location.name) || props.name}
+        </p>
 
         <img
           className="NoticiaItem-img"
-          src={props.album.images[0].url}
-          alt={props.album.name}
+          src={props.image}
+          alt={props.name}
           onClick={handleItemClik}
         />
       </div>
 
-      <Megusta likes={props.duration_ms} compartidos={props.popularity} />
+      <Megusta
+        likes={(props.episode.length || 1) * 5}
+        compartidos={(props.episode.length || 1) * 3}
+      />
     </div>
   );
 };
