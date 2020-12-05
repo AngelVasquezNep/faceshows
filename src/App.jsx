@@ -3,7 +3,6 @@ import AppContainer from './components/App-container.jsx';
 import Menu from './components/Menu';
 import Relase from './components/Relase';
 import Container from './components/Container';
-// import Historias from './components/Historias';
 import RelaseRight from './components/Relase-right';
 import Noticias from './components/Noticias';
 import ModalContainer from './components/modalContainer';
@@ -12,12 +11,6 @@ import ItemFullScreen from './components/ItemFullScreen';
 import MessageContainer from './components/MessageContainer';
 import { searchApi, listArtists, artistRandom } from './services/searchApi.js';
 
-//simport Api from './Api-noticias.json'
-// https://www.tvmaze.com/api
-
-// https://www.behance.net/dev/apps/42679?success=1
-// https://www.behance.net/dev/
-// API KEY / CLIENT ID ppkVaq40VH8OlOVeifEokl6VmZfBSY8h
 
 class App extends PureComponent {
   constructor(props) {
@@ -35,7 +28,7 @@ class App extends PureComponent {
 
   componentDidMount() {
     console.info("VERSION: Catch API error")
-    this.search(artistRandom(listArtists));
+    this.search();
   }
 
   componentDidCatch(error) {

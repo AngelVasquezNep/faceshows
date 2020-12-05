@@ -1,6 +1,6 @@
 const BASE_URL = 'https://rickandmortyapi.com/api';
 
-export const searchApi = (value, limit = 20) => {
+export const searchApi = (value = "", limit = 20) => {
   return fetch(`${BASE_URL}/character/?name=${value}`)
     .then((res) => {
       if (res.status === 404) {
