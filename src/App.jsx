@@ -20,9 +20,32 @@ import { searchApi, listArtists, artistRandom } from './services/searchApi.js';
 // API KEY / CLIENT ID ppkVaq40VH8OlOVeifEokl6VmZfBSY8h
 
 class App extends PureComponent {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      hasError: false,
+      resultados: [],
+      fetchLoadingNoticias: true,
+      errorResultados: false,
+      isItemFullScreen: false,
+      itemFullScreen: {}
+    };
+  }
+
+  componentDidMount() {
+    this.search(artistRandom(listArtists));
+  }
+
+  componentDidCatch(error) {
+    console.error(error)
+    this.setState({ hasError: true })
+  }
+
   search = (value) => {
     searchApi(value)
       .then((json) => {
+        console.log({ json })
         this.setState({
           resultados: json.tracks.items,
           fetchLoadingNoticias: false,
@@ -37,18 +60,6 @@ class App extends PureComponent {
         });
       });
   };
-
-  state = {
-    resultados: [],
-    fetchLoadingNoticias: true,
-    errorResultados: false,
-    isItemFullScreen: false,
-    itemFullScreen: {}
-  };
-
-  componentDidMount() {
-    this.search(artistRandom(listArtists));
-  }
 
   togleScapeEvent = (ev) => {
     const keyScape = 27;
@@ -76,6 +87,12 @@ class App extends PureComponent {
   };
 
   render() {
+    if (this.state.hasError) {
+      <AppContainer>
+        <h1>Tuvimos un error</h1>
+      </AppContainer>
+    }
+
     return (
       <AppContainer>
         <Menu handleSearch={this.handleSearch} />

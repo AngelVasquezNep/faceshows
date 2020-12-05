@@ -3,9 +3,9 @@ export const searchApi = (value, limit = 20) => {
     `https://platzi-music-api.now.sh/search?type=track&query=${value}&limit=${limit}`
   )
     .then((res) => res.json())
-    .then((json) => json)
     .catch((error) => {
-      console.log('LO SENTIMOS, TUVIMOS UN ERROR: ' + error);
+      console.error('Error at fetch: ', error);
+      return Promise.reject(error)
     });
 };
 

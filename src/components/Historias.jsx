@@ -23,6 +23,7 @@ class Historias extends Component {
       })
       .catch((err) => {
         this.setState({
+          loading: false,
           error: true
         });
       });
